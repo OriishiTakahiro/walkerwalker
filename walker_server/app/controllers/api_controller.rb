@@ -1,8 +1,4 @@
 class ApiController < ApplicationController
-
-	#CSRF対策,これがないとAPIとしてPOSTできない
-	protect_from_forgery with: :null_session
-
 	def test_api
 		id = params["userid"].to_i
 		pass = params["userpass"]
@@ -20,15 +16,11 @@ class ApiController < ApplicationController
 		end
 	end
 
-	def get_list
-		render :json => User.all
-	end
-
 	def get_user_hash
 		response = Hash.new
 		users = User.where(:name => params[:name],:pass => params[:pass])
 		if users.empty?
-			response[:result] = "failed"
+			response[:result] = "failed" 
 		else
 			response[:result] = "success"
 			response[:userhash] = users.first.userhash 
@@ -38,21 +30,20 @@ class ApiController < ApplicationController
 	end
 
 	def register_user
-		response = Hash.new
+		
 		if params[:user] != nil or params[:pass] != nil 
 			user = User.new
 			colmuns = ['user','pass','userhash','created_at','updated_at']
 			user.name = params[:user]
 			user.pass = params[:pass]
-			user.userhash = (0..15).map{('a'..'z').to_a[rand(26)]}.join
+			user.userhash = (0..15).map{('A'..'Z').to_a[rand(26)]}.join
 			user.created_at = Time.now.to_s.split("+")[0]
 			user.updated_at = Time.now.to_s.split("+")[0]
 			user.save 
-			response = {:result => 'successed'}.merge({:userhash => user.userhash})
+			render :text => "New user is registered!!"
 		else
-			response = {:result => 'failed'} 
+			render :text => "New user is not registered!!"
 		end
-		render :json => response
 	end
 
 end

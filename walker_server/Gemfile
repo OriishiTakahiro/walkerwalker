@@ -39,6 +39,3 @@ gem 'spring',        group: :development
 # gem 'debugger', group: [:development, :test]
 
 gem 'therubyracer'
-
-gem 'haml-rails'
-gem 'erb2haml'
