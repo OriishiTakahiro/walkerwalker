@@ -1,8 +1,12 @@
 Rails.application.routes.draw do
+
 	get 'api/test' => 'api#test_api'
 	get 'api/bmi' => 'api#calc_bmi'
+	get 'api/list' => 'api#get_list'
 	get 'api/get_user_hash' => 'api#get_user_hash'
 	get 'api/register_user' => 'api#register_user'
+
+	post 'api/posts/register_user' => 'api#register_user'
   # The priority is based upon order of creation: first created -> highest priority.
   # See how all your routes lay out with "rake routes".
 
