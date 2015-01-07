@@ -1,0 +1,23 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+one:
+  userhash: MyString
+  not: MyString
+  'null': MyString
+  step: 1
+  not: MyString
+  'null': MyString
+  total_step: 1
+  not: MyString
+  'null': MyString
+
+two:
+  userhash: MyString
+  not: MyString
+  'null': MyString
+  step: 1
+  not: MyString
+  'null': MyString
+  total_step: 1
+  not: MyString
+  'null': MyString
