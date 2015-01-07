@@ -2045,3 +2045,70 @@ Completed 200 OK in 4ms (Views: 3.4ms | ActiveRecord: 0.3ms)
   [1m[36m (9.2ms)[0m  [1mINSERT INTO "schema_migrations" (version) VALUES ('20150107180146')[0m
   [1m[35m (5.9ms)[0m  INSERT INTO "schema_migrations" (version) VALUES ('20141217085222')
   [1m[36mActiveRecord::SchemaMigration Load (0.3ms)[0m  [1mSELECT "schema_migrations".* FROM "schema_migrations"[0m
+<<<<<<< HEAD
+=======
+Processing by ApiController#register_user as HTML
+  Parameters: {"user"=>"temp", "pass"=>"password"}
+Can't verify CSRF token authenticity
+  [1m[35m (0.3ms)[0m  begin transaction
+  [1m[36mSQL (1.0ms)[0m  [1mINSERT INTO "users" ("created_at", "name", "pass", "updated_at", "userhash") VALUES (?, ?, ?, ?, ?)[0m  [["created_at", "2015-01-05 20:48:26.000000"], ["name", "temp"], ["pass", "password"], ["updated_at", "2015-01-05 20:48:26.000000"], ["userhash", "uxjhpbahxoegdvmz"]]
+  [1m[35m (6.4ms)[0m  commit transaction
+Completed 200 OK in 79ms (Views: 0.7ms | ActiveRecord: 8.6ms)
+
+
+Started POST "/api/posts/register_user" for 220.217.130.42 at 2015-01-05 20:51:32 +0900
+Processing by ApiController#register_user as HTML
+  Parameters: {"user"=>"temp", "pass"=>"password"}
+Can't verify CSRF token authenticity
+  [1m[36m (0.4ms)[0m  [1mbegin transaction[0m
+  [1m[35mSQL (0.4ms)[0m  INSERT INTO "users" ("created_at", "name", "pass", "updated_at", "userhash") VALUES (?, ?, ?, ?, ?)  [["created_at", "2015-01-05 20:51:32.000000"], ["name", "temp"], ["pass", "password"], ["updated_at", "2015-01-05 20:51:32.000000"], ["userhash", "stngpmrkpbaoxdik"]]
+  [1m[36m (3.5ms)[0m  [1mcommit transaction[0m
+Completed 200 OK in 13ms (Views: 0.5ms | ActiveRecord: 4.4ms)
+
+
+Started POST "/api/posts/register_user" for 220.217.130.42 at 2015-01-05 20:52:50 +0900
+Processing by ApiController#register_user as HTML
+  Parameters: {"user"=>"temp", "pass"=>"password"}
+Can't verify CSRF token authenticity
+  [1m[35m (0.3ms)[0m  begin transaction
+  [1m[36mSQL (0.6ms)[0m  [1mINSERT INTO "users" ("created_at", "name", "pass", "updated_at", "userhash") VALUES (?, ?, ?, ?, ?)[0m  [["created_at", "2015-01-05 20:52:50.000000"], ["name", "temp"], ["pass", "password"], ["updated_at", "2015-01-05 20:52:50.000000"], ["userhash", "oudojqhccemnfecu"]]
+  [1m[35m (11.4ms)[0m  commit transaction
+Completed 200 OK in 19ms (Views: 0.4ms | ActiveRecord: 12.2ms)
+
+
+Started GET "/api/list" for 220.217.130.42 at 2015-01-05 21:09:09 +0900
+Processing by ApiController#get_list as HTML
+  [1m[36mUser Load (1.4ms)[0m  [1mSELECT "users".* FROM "users"[0m
+Completed 200 OK in 64ms (Views: 61.9ms | ActiveRecord: 1.4ms)
+
+
+Started POST "/api/posts/register_user" for 220.217.130.42 at 2015-01-08 02:41:59 +0900
+  [1m[36mActiveRecord::SchemaMigration Load (0.3ms)[0m  [1mSELECT "schema_migrations".* FROM "schema_migrations"[0m
+Processing by ApiController#register_user as HTML
+  Parameters: {"user"=>"temp", "pass"=>"password"}
+Can't verify CSRF token authenticity
+  [1m[35m (0.2ms)[0m  begin transaction
+  [1m[36mSQL (0.6ms)[0m  [1mINSERT INTO "users" ("created_at", "name", "pass", "updated_at", "userhash") VALUES (?, ?, ?, ?, ?)[0m  [["created_at", "2015-01-08 02:42:00.000000"], ["name", "temp"], ["pass", "password"], ["updated_at", "2015-01-08 02:42:00.000000"], ["userhash", "qdlypwjibehpfuop"]]
+  [1m[35m (10.3ms)[0m  commit transaction
+Completed 200 OK in 59ms (Views: 0.6ms | ActiveRecord: 12.1ms)
+
+
+Started GET "/api/list" for 220.217.130.42 at 2015-01-08 02:45:26 +0900
+  [1m[36mActiveRecord::SchemaMigration Load (0.2ms)[0m  [1mSELECT "schema_migrations".* FROM "schema_migrations"[0m
+Processing by ApiController#get_list as HTML
+  [1m[35mUser Load (1.4ms)[0m  SELECT "users".* FROM "users"
+Completed 200 OK in 89ms (Views: 51.7ms | ActiveRecord: 1.9ms)
+  [1m[36m (12.4ms)[0m  [1mCREATE TABLE "users" ("id" INTEGER PRIMARY KEY AUTOINCREMENT NOT NULL, "name" varchar(255), "pass" varchar(255), "userhash" varchar(255), "created_at" datetime, "updated_at" datetime) [0m
+  [1m[35m (4.2ms)[0m  CREATE TABLE "schema_migrations" ("version" varchar(255) NOT NULL) 
+  [1m[36m (0.2ms)[0m  [1mselect sqlite_version(*)[0m
+  [1m[35m (4.2ms)[0m  CREATE UNIQUE INDEX "unique_schema_migrations" ON "schema_migrations" ("version")
+  [1m[36m (0.2ms)[0m  [1mSELECT version FROM "schema_migrations"[0m
+  [1m[35m (4.7ms)[0m  INSERT INTO "schema_migrations" (version) VALUES ('20141217085222')
+  [1m[36m (3.6ms)[0m  [1mCREATE TABLE "users" ("id" INTEGER PRIMARY KEY AUTOINCREMENT NOT NULL, "name" varchar(255), "pass" varchar(255), "userhash" varchar(255), "created_at" datetime, "updated_at" datetime) [0m
+  [1m[35m (3.9ms)[0m  CREATE TABLE "schema_migrations" ("version" varchar(255) NOT NULL) 
+  [1m[36m (0.1ms)[0m  [1mselect sqlite_version(*)[0m
+  [1m[35m (3.1ms)[0m  CREATE UNIQUE INDEX "unique_schema_migrations" ON "schema_migrations" ("version")
+  [1m[36m (0.2ms)[0m  [1mSELECT version FROM "schema_migrations"[0m
+  [1m[35m (4.8ms)[0m  INSERT INTO "schema_migrations" (version) VALUES ('20141217085222')
+  [1m[36mActiveRecord::SchemaMigration Load (0.2ms)[0m  [1mSELECT "schema_migrations".* FROM "schema_migrations"[0m
+>>>>>>> 46ec4488767840cb34a64136f5c4bed205e6a313
