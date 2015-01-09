@@ -24,10 +24,9 @@ class ApiController < ApplicationController
 
 	#under for API
 	
-	def register_user
+	def registerUser
 		if params[:user] != nil or params[:pass] != nil 
 			user = User.new
-			#colmuns = ['user','pass','userhash','created_at','updated_at']
 			user.name = params[:user]
 			user.pass = params[:pass]
 			while user.userhash == nil do
@@ -50,7 +49,7 @@ class ApiController < ApplicationController
 		end
 	end
 
-	def get_user_hash
+	def getUserhash
 		response = Hash.new
 		users = User.where(:name => params[:name],:pass => params[:pass])
 		if users.empty?
@@ -63,10 +62,37 @@ class ApiController < ApplicationController
 		render :json => response
 	end
 
-	def add_step
+	def addStep
+		mystep = Step.where(:userhash => params[:userhash])
+		response = Hash.new
+		unless mystep.empty?
+			mystep.update(:step => mystep.step + params[:step],:total_step => mystep.total_step + params[:step])
+			response = {:result => :successed,:total_step => mystep.total_step.to_s}
+		else
+			response = {:result => :failed}
+		end
+		render :json => response
 	end
 
-	def get_step
+	def getStep
+		response = Hash.new
+		mystep = Step.where(:userhash => params[:userhash])
+		unless mystep.empty?
+			response = {:result => :successed,:step => mystep.step.to_s,:total_step => mystep.total_step.to_s}
+		else
+			response = {:result => :failed}
+		end
+	end
+
+	def getGpsQuestList
+		response = Hash.new
+		questlist = Gpsquest.where(:flag => 1)
+	end
+
+	def postPosition
+	end
+
+	def postQR
 	end
 
 end

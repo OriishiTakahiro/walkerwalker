@@ -1,0 +1,23 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+one:
+  flag: 1
+  not: MyString
+  'null': MyString
+  destination: MyString
+  not: MyString
+  'null': MyString
+  reward_table: 1
+  not: MyString
+  'null': MyString
+
+two:
+  flag: 1
+  not: MyString
+  'null': MyString
+  destination: MyString
+  not: MyString
+  'null': MyString
+  reward_table: 1
+  not: MyString
+  'null': MyString

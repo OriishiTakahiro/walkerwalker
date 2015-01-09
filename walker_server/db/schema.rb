@@ -11,7 +11,17 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20150107180146) do
+ActiveRecord::Schema.define(version: 20150109110046) do
+
+  create_table "gpsquests", force: true do |t|
+    t.integer  "flag"
+    t.string   "not"
+    t.string   "null"
+    t.string   "destination"
+    t.integer  "reward_table"
+    t.datetime "created_at"
+    t.datetime "updated_at"
+  end
 
   create_table "steps", force: true do |t|
     t.string   "userhash",               null: false

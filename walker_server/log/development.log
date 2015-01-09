@@ -2112,3 +2112,10 @@ Completed 200 OK in 89ms (Views: 51.7ms | ActiveRecord: 1.9ms)
   [1m[35m (4.8ms)[0m  INSERT INTO "schema_migrations" (version) VALUES ('20141217085222')
   [1m[36mActiveRecord::SchemaMigration Load (0.2ms)[0m  [1mSELECT "schema_migrations".* FROM "schema_migrations"[0m
 >>>>>>> 46ec4488767840cb34a64136f5c4bed205e6a313
+  [1m[36mActiveRecord::SchemaMigration Load (0.5ms)[0m  [1mSELECT "schema_migrations".* FROM "schema_migrations"[0m
+Migrating to CreateGpsquests (20150109110046)
+  [1m[35m (0.1ms)[0m  begin transaction
+  [1m[36m (0.5ms)[0m  [1mCREATE TABLE "gpsquests" ("id" INTEGER PRIMARY KEY AUTOINCREMENT NOT NULL, "flag" integer, "not" varchar(255), "null" varchar(255), "destination" varchar(255), "reward_table" integer, "created_at" datetime, "updated_at" datetime) [0m
+  [1m[35mSQL (0.2ms)[0m  INSERT INTO "schema_migrations" ("version") VALUES (?)  [["version", "20150109110046"]]
+  [1m[36m (0.7ms)[0m  [1mcommit transaction[0m
+  [1m[35mActiveRecord::SchemaMigration Load (0.2ms)[0m  SELECT "schema_migrations".* FROM "schema_migrations"
