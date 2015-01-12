@@ -1,52 +1,44 @@
 #coding:utf-8
 class ApiController < ApplicationController
 
-	def test_api
-		id = params["userid"].to_i
-		pass = params["userpass"]
-		data = {"stamina" => 100 , "hoge" => "foo","id" => id+1,"userpass" => pass}
-		render :json => data
-	end
-
-	def calc_bmi
-		if params["height"] == nil or params["weight"] == nil
-			render :json => {"result" => "error"}
-		elsif params["height"].to_i - 100 < params["weight"].to_i
-			render :json => {"result" => "success","message" => "too fat","h" => params["height"],"w" => params["weight"]}
-		else
-			render :json => {"result" => "success","message" => "not fat","h" => params["height"],"w" => params["weight"]}
-		end
-	end
-
 	def get_list
 		render :json => User.all
 	end
 
-	#under for API
+	#under for connect by android 
 	
 	def registerUser
-		if params[:user] != nil or params[:pass] != nil 
+		response = Hash.new
+		
+		if params[:name] != nil and params[:pass] != nil
+			unless User.where(:name).empty?
+				response = {:result => :failed,:message => "specified name is already existing"}
+				render :json => response
+				return nil
+			end
+
 			user = User.new
-			user.name = params[:user]
+			user.name = params[:name]
 			user.pass = params[:pass]
 			while user.userhash == nil do
 				tmp =  (0..25).map{('a'..'z').to_a[rand(26)]}.join
 				user.userhash = tmp if User.where(:userhash => tmp).empty?
 			end
-			user.created_at = Time.now.to_s.split("+")[0]
-			user.updated_at = Time.now.to_s.split("+")[0]
-			user.save 
 
 			mystep = Step.new
-			mystep.userhash = user.userhash
-			mystep.created_at = Time.now.to_s.split("+")[0]
-			mystep.updated_at = Time.now.to_s.split("+")[0]
 			mystep.save
+			user.step_id = mystep.id
 
-			render :json => {:result => :successed , :userhash => user.userhash} 
+			user.save
+
+			response = {:result => :successed ,:message =>"registered use name = \"#{params[:name]}\"" ,:userhash => user.userhash} 
+
 		else
-			render :json => {:result => :failed}
+			response = {:result => :failed,:message => "lack of information for register new user"}
 		end
+
+		render :json => response
+
 	end
 
 	def getUserhash
@@ -66,7 +58,7 @@ class ApiController < ApplicationController
 		mystep = Step.where(:userhash => params[:userhash])
 		response = Hash.new
 		unless mystep.empty?
-			mystep.update(:step => mystep.step + params[:step],:total_step => mystep.total_step + params[:step])
+			mystep.update(:stock_step => mystep.stock_step + params[:step],:total_step => mystep.total_step)
 			response = {:result => :successed,:total_step => mystep.total_step.to_s}
 		else
 			response = {:result => :failed}
@@ -85,14 +77,63 @@ class ApiController < ApplicationController
 	end
 
 	def getGpsQuestList
-		response = Hash.new
-		questlist = Gpsquest.where(:flag => 1)
+		questlist = Gpsquest.where(:flag => 1).map{|x| return {:id => x.id , :destination => x.destination}}
+		render :json => questlist
 	end
 
 	def postPosition
+		response = Hash.new
+		myuser = User.where(:userhash => params[:userhash])
+		target_quest = Gpsquest.where(:id => params[:id].to_i)
+
+		if((target_quest.destination_latitude - params[:destination_latitude].to_f).abs <= threshold and (target_quest.destination_latitude - params[:destination_latitude].to_f).abs <= threshold and !(myuser.empty?))
+			reward_list = Lotrate.where(:table_id => target_quest[:lot_table].to_i).map{|x| return rand(101) < x.probability ? x.item_id : nil}.delete(nil).join(",")
+			myuser.update(:stock_item => myuser.stock_item + "," + reward_list)
+			response = {:result => :successed,:items => reward_list}
+		else
+			response = {:result => :failed}
+		end
+		render :json => response
 	end
 
 	def postQR
+		response = Hash.new()
+		myuser = User.where(:userhash => params[:userhash])
+		unless(myuser.empty?)
+			items = Qrevent.where(:code => params[:code]).map{|x| return x.cord}.join(",")
+			response = {:result => :successed,:items => items}
+		else
+			response = {:result => :successed}
+		end
 	end
 
+	#under for connect by administrator
+	
+	def newData(object,setlist)
+		if params[:pass] == 'hr16vayd7lx8ktnusme5'
+			eval(
+				<<-EOS
+					obj = #{object}.new()
+					#{setlist.map{|x| "obj.#{x} = params[:#{x}]\n"}.join}
+					obj.save
+
+					render :text => "successed"
+				EOS
+			)
+		else
+			render :text => "failed! unmatched password"
+		end
+	end
+
+	def newLotRate
+		newData('Lotrate',['table_id','item_id','probability'])
+	end
+
+	def newGpsQuest
+		newData('Gpsquest',['flag','lot_table','destination_latitude','destination_longitude'])
+	end
+
+	def newQRevent
+		newData('Qrevent',['cord','reward_id'])
+	end
 end

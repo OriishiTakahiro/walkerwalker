@@ -11,30 +11,45 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20150109110046) do
+ActiveRecord::Schema.define(version: 20150110060344) do
 
   create_table "gpsquests", force: true do |t|
-    t.integer  "flag"
-    t.string   "not"
-    t.string   "null"
-    t.string   "destination"
-    t.integer  "reward_table"
+    t.integer  "flag",                  null: false
+    t.integer  "lot_table",             null: false
+    t.string   "destination_latitude",  null: false
+    t.string   "destination_longitude", null: false
+    t.datetime "created_at"
+    t.datetime "updated_at"
+  end
+
+  create_table "lotrates", force: true do |t|
+    t.integer  "table_id",    null: false
+    t.integer  "item_id",     null: false
+    t.integer  "probability", null: false
+    t.datetime "created_at"
+    t.datetime "updated_at"
+  end
+
+  create_table "qrevents", force: true do |t|
+    t.string   "cord",       null: false
+    t.integer  "reward_id",  null: false
     t.datetime "created_at"
     t.datetime "updated_at"
   end
 
   create_table "steps", force: true do |t|
-    t.string   "userhash",               null: false
-    t.integer  "step",       default: 0, null: false
+    t.integer  "stock_step", default: 0, null: false
     t.integer  "total_step", default: 0, null: false
     t.datetime "created_at"
     t.datetime "updated_at"
   end
 
   create_table "users", force: true do |t|
-    t.string   "name"
-    t.string   "pass"
-    t.string   "userhash"
+    t.string   "name",                    null: false
+    t.string   "pass",                    null: false
+    t.string   "userhash",                null: false
+    t.string   "stock_item", default: "", null: false
+    t.string   "step_id",                 null: false
     t.datetime "created_at"
     t.datetime "updated_at"
   end

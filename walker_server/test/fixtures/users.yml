@@ -3,9 +3,11 @@
 one:
   name: MyString
   pass: MyString
-  userhash: MyString
+  stock_item: MyString
+  step_id: MyString
 
 two:
   name: MyString
   pass: MyString
-  userhash: MyString
+  stock_item: MyString
+  step_id: MyString

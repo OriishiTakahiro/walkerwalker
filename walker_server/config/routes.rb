@@ -1,9 +1,16 @@
 Rails.application.routes.draw do
+
+	#for android client
 	get 'api/test' => 'api#test_api'
 	get 'api/list' => 'api#get_list'
-	get 'api/getUserhash' => 'api#get_user_hash'
+	get 'api/getUserhash' => 'api#getUserhash'
 
-	post 'api/posts/registerUser' => 'api#register_user'
+	post 'api/posts/register_user' => 'api#registerUser'
+	#for administrator
+	post 'api/admin/newLotRate' => 'api#newLotRate'
+	post 'api/admin/newGpsQuest' => 'api#newGpsQuest'
+	post 'api/admin/newQRevent' => 'api#newQRevent'
+
   # The priority is based upon order of creation: first created -> highest priority.
   # See how all your routes lay out with "rake routes".
 

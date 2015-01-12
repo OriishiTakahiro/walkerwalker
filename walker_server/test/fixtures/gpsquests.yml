@@ -2,22 +2,12 @@
 
 one:
   flag: 1
-  not: MyString
-  'null': MyString
-  destination: MyString
-  not: MyString
-  'null': MyString
-  reward_table: 1
-  not: MyString
-  'null': MyString
+  lot_table: 1
+  destination_latitude: 
+  destination_longitude: 
 
 two:
   flag: 1
-  not: MyString
-  'null': MyString
-  destination: MyString
-  not: MyString
-  'null': MyString
-  reward_table: 1
-  not: MyString
-  'null': MyString
+  lot_table: 1
+  destination_latitude: 
+  destination_longitude: 
