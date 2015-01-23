@@ -84,17 +84,14 @@ class ApiController < ApplicationController
 	end
 
 	def postLocation
-		threshold = 0.1
+		Gpslog.new(:userhash => params[:userhash],:longitude => params[:longitude].to_f,:latitude => params[:latitude].to_f).save
+
+		threshold = 1.1
 		response = Hash.new
-		myuser = User.where(:userhash => params[:userhash]).first
+		myuser = User.find_by_userhash(params[:userhash])
 		target_quest = Gpsquest.find(params[:id].to_i)
 
-		log = Gpslog.new
-		log.userhash = params[:userhash]
-		log.longitude = params[:longitude].to_f
-		log.latitude = params[:latitude].to_f
-
-		if((target_quest.latitude - params[:latitude].to_f).abs <= threshold and (target_quest.longitude - params[:longitude].to_f).abs <= threshold and myuser != nil)
+				if((target_quest.latitude - params[:latitude].to_f).abs <= threshold and (target_quest.longitude - params[:longitude].to_f).abs <= threshold and myuser != nil)
 
 			new_item = ItemsUsers.new
 			new_item.user_id = myuser.id

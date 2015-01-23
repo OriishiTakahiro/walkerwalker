@@ -3,6 +3,7 @@
 %table
   %thead
     %tr
+      %th Destination
       %th Longitude
       %th Latitude
       %th Reward
@@ -13,6 +14,7 @@
   %tbody
     - @gpsquests.each do |gpsquest|
       %tr
+        %td= gpsquest.destination
         %td= gpsquest.longitude
         %td= gpsquest.latitude
         %td= gpsquest.reward

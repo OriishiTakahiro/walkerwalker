@@ -69,6 +69,6 @@ class GpsquestsController < ApplicationController
 
     # Never trust parameters from the scary internet, only allow the white list through.
     def gpsquest_params
-      params.require(:gpsquest).permit(:longitude, :latitude, :reward)
+      params.require(:gpsquest).permit(:destination, :longitude, :latitude, :reward)
     end
 end

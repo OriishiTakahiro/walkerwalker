@@ -7,6 +7,9 @@
           %li= msg
 
   .field
+    = f.label :destination
+    = f.text_field :destination
+  .field
     = f.label :longitude
     = f.text_field :longitude
   .field
@@ -14,6 +17,6 @@
     = f.text_field :latitude
   .field
     = f.label :reward
-    = f.number_field :reward
+    = f.text_field :reward
   .actions
     = f.submit 'Save'

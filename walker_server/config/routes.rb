@@ -1,10 +1,12 @@
 Rails.application.routes.draw do
 
+  resources :items_users
+
+  resources :gpsquests
+
   resources :qrlogs
 
   resources :steplogs
-
-  resources :gpsquests
 
   resources :gpslogs
 

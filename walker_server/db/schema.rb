@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20150123084117) do
+ActiveRecord::Schema.define(version: 20150123120044) do
 
   create_table "gpslogs", force: true do |t|
     t.string   "userhash"
@@ -22,6 +22,7 @@ ActiveRecord::Schema.define(version: 20150123084117) do
   end
 
   create_table "gpsquests", force: true do |t|
+    t.string   "destination"
     t.float    "longitude"
     t.float    "latitude"
     t.integer  "reward"
@@ -39,7 +40,7 @@ ActiveRecord::Schema.define(version: 20150123084117) do
 
   create_table "items_users", force: true do |t|
     t.integer  "user_id"
-    t.integer  "users_id"
+    t.integer  "item_id"
     t.datetime "created_at"
     t.datetime "updated_at"
   end

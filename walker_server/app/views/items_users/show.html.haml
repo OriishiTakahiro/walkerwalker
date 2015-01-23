@@ -1,0 +1,12 @@
+%p#notice= notice
+
+%p
+  %b User:
+  = @items_user.user_id
+%p
+  %b Item:
+  = @items_user.item_id
+
+= link_to 'Edit', edit_items_user_path(@items_user)
+\|
+= link_to 'Back', items_users_path

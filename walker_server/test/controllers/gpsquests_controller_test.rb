@@ -18,7 +18,7 @@ class GpsquestsControllerTest < ActionController::TestCase
 
   test "should create gpsquest" do
     assert_difference('Gpsquest.count') do
-      post :create, gpsquest: { latitude: @gpsquest.latitude, longitude: @gpsquest.longitude, reward: @gpsquest.reward }
+      post :create, gpsquest: { destination: @gpsquest.destination, latitude: @gpsquest.latitude, longitude: @gpsquest.longitude, reward: @gpsquest.reward }
     end
 
     assert_redirected_to gpsquest_path(assigns(:gpsquest))
@@ -35,7 +35,7 @@ class GpsquestsControllerTest < ActionController::TestCase
   end
 
   test "should update gpsquest" do
-    patch :update, id: @gpsquest, gpsquest: { latitude: @gpsquest.latitude, longitude: @gpsquest.longitude, reward: @gpsquest.reward }
+    patch :update, id: @gpsquest, gpsquest: { destination: @gpsquest.destination, latitude: @gpsquest.latitude, longitude: @gpsquest.longitude, reward: @gpsquest.reward }
     assert_redirected_to gpsquest_path(assigns(:gpsquest))
   end
 

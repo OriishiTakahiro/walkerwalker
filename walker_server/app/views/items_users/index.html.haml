@@ -1,0 +1,23 @@
+%h1 Listing items_users
+
+%table
+  %thead
+    %tr
+      %th User
+      %th Item
+      %th
+      %th
+      %th
+      
+  %tbody
+    - @items_users.each do |items_user|
+      %tr
+        %td= items_user.user_id
+        %td= items_user.item_id
+        %td= link_to 'Show', items_user
+        %td= link_to 'Edit', edit_items_user_path(items_user)
+        %td= link_to 'Destroy', items_user, :method => :delete, :data => { :confirm => 'Are you sure?' }
+
+%br
+
+= link_to 'New Items user', new_items_user_path
