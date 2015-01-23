@@ -1,0 +1,12 @@
+%p#notice= notice
+
+%p
+  %b Userhash:
+  = @steplog.userhash
+%p
+  %b Step:
+  = @steplog.step
+
+= link_to 'Edit', edit_steplog_path(@steplog)
+\|
+= link_to 'Back', steplogs_path

@@ -1,0 +1,15 @@
+%p#notice= notice
+
+%p
+  %b Userhash:
+  = @gpslog.userhash
+%p
+  %b Longitude:
+  = @gpslog.longitude
+%p
+  %b Latitude:
+  = @gpslog.latitude
+
+= link_to 'Edit', edit_gpslog_path(@gpslog)
+\|
+= link_to 'Back', gpslogs_path

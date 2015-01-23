@@ -1,0 +1,23 @@
+%h1 Listing steplogs
+
+%table
+  %thead
+    %tr
+      %th Userhash
+      %th Step
+      %th
+      %th
+      %th
+      
+  %tbody
+    - @steplogs.each do |steplog|
+      %tr
+        %td= steplog.userhash
+        %td= steplog.step
+        %td= link_to 'Show', steplog
+        %td= link_to 'Edit', edit_steplog_path(steplog)
+        %td= link_to 'Destroy', steplog, :method => :delete, :data => { :confirm => 'Are you sure?' }
+
+%br
+
+= link_to 'New Steplog', new_steplog_path

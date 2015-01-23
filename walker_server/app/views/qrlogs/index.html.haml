@@ -1,0 +1,23 @@
+%h1 Listing qrlogs
+
+%table
+  %thead
+    %tr
+      %th Userhash
+      %th Code
+      %th
+      %th
+      %th
+      
+  %tbody
+    - @qrlogs.each do |qrlog|
+      %tr
+        %td= qrlog.userhash
+        %td= qrlog.code
+        %td= link_to 'Show', qrlog
+        %td= link_to 'Edit', edit_qrlog_path(qrlog)
+        %td= link_to 'Destroy', qrlog, :method => :delete, :data => { :confirm => 'Are you sure?' }
+
+%br
+
+= link_to 'New Qrlog', new_qrlog_path

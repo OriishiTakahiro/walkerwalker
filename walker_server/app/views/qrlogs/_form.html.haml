@@ -1,0 +1,16 @@
+= form_for @qrlog do |f|
+  - if @qrlog.errors.any?
+    #error_explanation
+      %h2= "#{pluralize(@qrlog.errors.count, "error")} prohibited this qrlog from being saved:"
+      %ul
+        - @qrlog.errors.full_messages.each do |msg|
+          %li= msg
+
+  .field
+    = f.label :userhash
+    = f.text_field :userhash
+  .field
+    = f.label :code
+    = f.text_field :code
+  .actions
+    = f.submit 'Save'

@@ -1,0 +1,12 @@
+%p#notice= notice
+
+%p
+  %b Userhash:
+  = @qrlog.userhash
+%p
+  %b Code:
+  = @qrlog.code
+
+= link_to 'Edit', edit_qrlog_path(@qrlog)
+\|
+= link_to 'Back', qrlogs_path

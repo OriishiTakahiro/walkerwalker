@@ -1,0 +1,19 @@
+= form_for @gpsquest do |f|
+  - if @gpsquest.errors.any?
+    #error_explanation
+      %h2= "#{pluralize(@gpsquest.errors.count, "error")} prohibited this gpsquest from being saved:"
+      %ul
+        - @gpsquest.errors.full_messages.each do |msg|
+          %li= msg
+
+  .field
+    = f.label :longitude
+    = f.text_field :longitude
+  .field
+    = f.label :latitude
+    = f.text_field :latitude
+  .field
+    = f.label :reward
+    = f.number_field :reward
+  .actions
+    = f.submit 'Save'

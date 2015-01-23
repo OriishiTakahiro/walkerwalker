@@ -11,45 +11,78 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20150110060344) do
+ActiveRecord::Schema.define(version: 20150123084117) do
 
-  create_table "gpsquests", force: true do |t|
-    t.integer  "flag",                  null: false
-    t.integer  "lot_table",             null: false
-    t.string   "destination_latitude",  null: false
-    t.string   "destination_longitude", null: false
+  create_table "gpslogs", force: true do |t|
+    t.string   "userhash"
+    t.float    "longitude"
+    t.float    "latitude"
     t.datetime "created_at"
     t.datetime "updated_at"
   end
 
-  create_table "lotrates", force: true do |t|
-    t.integer  "table_id",    null: false
-    t.integer  "item_id",     null: false
-    t.integer  "probability", null: false
+  create_table "gpsquests", force: true do |t|
+    t.float    "longitude"
+    t.float    "latitude"
+    t.integer  "reward"
+    t.datetime "created_at"
+    t.datetime "updated_at"
+  end
+
+  create_table "items", force: true do |t|
+    t.string   "name"
+    t.string   "classification"
+    t.string   "description"
+    t.datetime "created_at"
+    t.datetime "updated_at"
+  end
+
+  create_table "items_users", force: true do |t|
+    t.integer  "user_id"
+    t.integer  "users_id"
     t.datetime "created_at"
     t.datetime "updated_at"
   end
 
   create_table "qrevents", force: true do |t|
-    t.string   "cord",       null: false
+    t.string   "code",       null: false
     t.integer  "reward_id",  null: false
     t.datetime "created_at"
     t.datetime "updated_at"
   end
 
+  create_table "qrlogs", force: true do |t|
+    t.string   "userhash"
+    t.string   "code"
+    t.datetime "created_at"
+    t.datetime "updated_at"
+  end
+
+  create_table "step_users", force: true do |t|
+    t.integer  "step_id"
+    t.integer  "user_id"
+    t.datetime "created_at"
+    t.datetime "updated_at"
+  end
+
+  create_table "steplogs", force: true do |t|
+    t.string   "userhash"
+    t.integer  "step"
+    t.datetime "created_at"
+    t.datetime "updated_at"
+  end
+
   create_table "steps", force: true do |t|
-    t.integer  "stock_step", default: 0, null: false
-    t.integer  "total_step", default: 0, null: false
+    t.integer  "stock_step"
+    t.integer  "total_step"
     t.datetime "created_at"
     t.datetime "updated_at"
   end
 
   create_table "users", force: true do |t|
-    t.string   "name",                    null: false
-    t.string   "pass",                    null: false
-    t.string   "userhash",                null: false
-    t.string   "stock_item", default: "", null: false
-    t.string   "step_id",                 null: false
+    t.string   "name"
+    t.string   "pass"
+    t.string   "userhash"
     t.datetime "created_at"
     t.datetime "updated_at"
   end

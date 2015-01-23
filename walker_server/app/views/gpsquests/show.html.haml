@@ -1,0 +1,15 @@
+%p#notice= notice
+
+%p
+  %b Longitude:
+  = @gpsquest.longitude
+%p
+  %b Latitude:
+  = @gpsquest.latitude
+%p
+  %b Reward:
+  = @gpsquest.reward
+
+= link_to 'Edit', edit_gpsquest_path(@gpsquest)
+\|
+= link_to 'Back', gpsquests_path

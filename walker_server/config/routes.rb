@@ -1,15 +1,33 @@
 Rails.application.routes.draw do
 
+  resources :qrlogs
+
+  resources :steplogs
+
+  resources :gpsquests
+
+  resources :gpslogs
+
+  resources :items
+
+  resources :users
+
 	#for android client
 	get 'api/test' => 'api#test_api'
 	get 'api/list' => 'api#get_list'
-	get 'api/getUserhash' => 'api#getUserhash'
+	get 'api/get/get_userhash' => 'api#getUserhash'
+	get 'api/get/get_step' => 'api#getStep'
+	get 'api/get/get_gps_questlist' => 'api#getGpsQuestList'
 
-	post 'api/posts/register_user' => 'api#registerUser'
+	post 'api/post/register_user' => 'api#registerUser'
+	post 'api/post/post_step' => 'api#addStep'
+	post 'api/post/post_location' => 'api#postLocation'
+	post 'api/post/post_qr_code' => 'api#postQRcode'
+
 	#for administrator
-	post 'api/admin/newLotRate' => 'api#newLotRate'
-	post 'api/admin/newGpsQuest' => 'api#newGpsQuest'
-	post 'api/admin/newQRevent' => 'api#newQRevent'
+	post 'api/admin/new_lotrate' => 'api#newLotRate'
+	post 'api/admin/new_gpsquest' => 'api#newGpsQuest'
+	post 'api/admin/new_qrevent' => 'api#newQRevent'
 
   # The priority is based upon order of creation: first created -> highest priority.
   # See how all your routes lay out with "rake routes".

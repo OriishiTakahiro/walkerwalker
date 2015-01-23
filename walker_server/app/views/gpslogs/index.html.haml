@@ -1,0 +1,25 @@
+%h1 Listing gpslogs
+
+%table
+  %thead
+    %tr
+      %th Userhash
+      %th Longitude
+      %th Latitude
+      %th
+      %th
+      %th
+      
+  %tbody
+    - @gpslogs.each do |gpslog|
+      %tr
+        %td= gpslog.userhash
+        %td= gpslog.longitude
+        %td= gpslog.latitude
+        %td= link_to 'Show', gpslog
+        %td= link_to 'Edit', edit_gpslog_path(gpslog)
+        %td= link_to 'Destroy', gpslog, :method => :delete, :data => { :confirm => 'Are you sure?' }
+
+%br
+
+= link_to 'New Gpslog', new_gpslog_path

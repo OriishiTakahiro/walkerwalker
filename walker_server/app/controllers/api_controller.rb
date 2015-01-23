@@ -21,7 +21,7 @@ class ApiController < ApplicationController
 			user.name = params[:name]
 			user.pass = params[:pass]
 			while user.userhash == nil do
-				tmp =  (0..25).map{('a'..'z').to_a[rand(26)]}.join
+				tmp = ((1..9).to_a + ('a'..'z').to_a).sample(25).join
 				user.userhash = tmp if User.where(:userhash => tmp).empty?
 			end
 
@@ -31,7 +31,7 @@ class ApiController < ApplicationController
 
 			user.save
 
-			response = {:result => :successed ,:message =>"registered use name = \"#{params[:name]}\"" ,:userhash => user.userhash} 
+			response = {:result => :successed ,:message =>"registered use name = #{params[:name]}" ,:userhash => user.userhash} 
 
 		else
 			response = {:result => :failed,:message => "lack of information for register new user"}
@@ -55,11 +55,13 @@ class ApiController < ApplicationController
 	end
 
 	def addStep
-		mystep = Step.where(:userhash => params[:userhash])
+		Steplog.new(:userhash => params[:userhash],:step => params[:step]).save
+		mystep = Step.find(StepUser.find_by_user_id(User.find_by_userhash(params[:userhash]).id).step_id)
 		response = Hash.new
-		unless mystep.empty?
-			mystep.update(:stock_step => mystep.stock_step + params[:step],:total_step => mystep.total_step)
-			response = {:result => :successed,:total_step => mystep.total_step.to_s}
+		if mystep
+			addition = params[:step].to_i
+			mystep.update(:stock_step => mystep.stock_step + addition ,:total_step => mystep.total_step + addition)
+			response = {:result => :successed,:total_step => mystep.total_step.to_s,:stock_step => mystep.stock_step.to_s}
 		else
 			response = {:result => :failed}
 		end
@@ -68,35 +70,45 @@ class ApiController < ApplicationController
 
 	def getStep
 		response = Hash.new
-		mystep = Step.where(:userhash => params[:userhash])
-		unless mystep.empty?
-			response = {:result => :successed,:step => mystep.step.to_s,:total_step => mystep.total_step.to_s}
+		mystep = Step.find(User.where(:userhash => params[:userhash]).first.step_id)
+		if mystep
+			response = {:result => :successed,:step => mystep.stock_step.to_s,:total_step => mystep.total_step.to_s}
 		else
-			response = {:result => :failed}
+			response = {:result => :failed,:message => 'userhash is no match'}
 		end
+		render :json => response
 	end
 
 	def getGpsQuestList
-		questlist = Gpsquest.where(:flag => 1).map{|x| return {:id => x.id , :destination => x.destination}}
-		render :json => questlist
+		render :json => Gpsquest.where(:flag => 1)
 	end
 
-	def postPosition
+	def postLocation
+		threshold = 0.1
 		response = Hash.new
-		myuser = User.where(:userhash => params[:userhash])
-		target_quest = Gpsquest.where(:id => params[:id].to_i)
+		myuser = User.where(:userhash => params[:userhash]).first
+		target_quest = Gpsquest.find(params[:id].to_i)
 
-		if((target_quest.destination_latitude - params[:destination_latitude].to_f).abs <= threshold and (target_quest.destination_latitude - params[:destination_latitude].to_f).abs <= threshold and !(myuser.empty?))
-			reward_list = Lotrate.where(:table_id => target_quest[:lot_table].to_i).map{|x| return rand(101) < x.probability ? x.item_id : nil}.delete(nil).join(",")
-			myuser.update(:stock_item => myuser.stock_item + "," + reward_list)
-			response = {:result => :successed,:items => reward_list}
+		log = Gpslog.new
+		log.userhash = params[:userhash]
+		log.longitude = params[:longitude].to_f
+		log.latitude = params[:latitude].to_f
+
+		if((target_quest.latitude - params[:latitude].to_f).abs <= threshold and (target_quest.longitude - params[:longitude].to_f).abs <= threshold and myuser != nil)
+
+			new_item = ItemsUsers.new
+			new_item.user_id = myuser.id
+			new_item.item_id = target_quest.reward
+			new_item.save
+
+			response = {:result => :successed}
 		else
 			response = {:result => :failed}
 		end
 		render :json => response
 	end
 
-	def postQR
+	def postQRcode
 		response = Hash.new()
 		myuser = User.where(:userhash => params[:userhash])
 		unless(myuser.empty?)

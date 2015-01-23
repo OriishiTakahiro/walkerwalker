@@ -1,0 +1,25 @@
+%h1 Listing gpsquests
+
+%table
+  %thead
+    %tr
+      %th Longitude
+      %th Latitude
+      %th Reward
+      %th
+      %th
+      %th
+      
+  %tbody
+    - @gpsquests.each do |gpsquest|
+      %tr
+        %td= gpsquest.longitude
+        %td= gpsquest.latitude
+        %td= gpsquest.reward
+        %td= link_to 'Show', gpsquest
+        %td= link_to 'Edit', edit_gpsquest_path(gpsquest)
+        %td= link_to 'Destroy', gpsquest, :method => :delete, :data => { :confirm => 'Are you sure?' }
+
+%br
+
+= link_to 'New Gpsquest', new_gpsquest_path
