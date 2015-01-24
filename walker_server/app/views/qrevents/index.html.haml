@@ -1,0 +1,23 @@
+%h1 Listing qrevents
+
+%table
+  %thead
+    %tr
+      %th Code
+      %th Reward
+      %th
+      %th
+      %th
+      
+  %tbody
+    - @qrevents.each do |qrevent|
+      %tr
+        %td= qrevent.code
+        %td= qrevent.reward
+        %td= link_to 'Show', qrevent
+        %td= link_to 'Edit', edit_qrevent_path(qrevent)
+        %td= link_to 'Destroy', qrevent, :method => :delete, :data => { :confirm => 'Are you sure?' }
+
+%br
+
+= link_to 'New Qrevent', new_qrevent_path

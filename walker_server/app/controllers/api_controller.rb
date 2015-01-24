@@ -106,14 +106,18 @@ class ApiController < ApplicationController
 	end
 
 	def postQRcode
+		Qrlog.new(:userhash => params[:userhash],:code => params[:code]).save()
 		response = Hash.new()
-		myuser = User.where(:userhash => params[:userhash])
-		unless(myuser.empty?)
-			items = Qrevent.where(:code => params[:code]).map{|x| return x.cord}.join(",")
-			response = {:result => :successed,:items => items}
-		else
+		event = Qrevent.find_by_code(params[:code]).reward
+		user = User.find_by_userhash(params[:userhash]).id
+		if(!event || !user)
+			response = {:result => :failed}
+		elsif(ItemsUsers.new(:item_id => event, :user_id => user).save)
 			response = {:result => :successed}
+		else
+			response = {:result => :failed}
 		end
+		render :json => response
 	end
 
 	#under for connect by administrator

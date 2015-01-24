@@ -1,0 +1,16 @@
+= form_for @qrevent do |f|
+  - if @qrevent.errors.any?
+    #error_explanation
+      %h2= "#{pluralize(@qrevent.errors.count, "error")} prohibited this qrevent from being saved:"
+      %ul
+        - @qrevent.errors.full_messages.each do |msg|
+          %li= msg
+
+  .field
+    = f.label :code
+    = f.text_field :code
+  .field
+    = f.label :reward
+    = f.number_field :reward
+  .actions
+    = f.submit 'Save'

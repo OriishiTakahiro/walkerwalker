@@ -1,5 +1,7 @@
 Rails.application.routes.draw do
 
+  resources :qrevents
+
   resources :items_users
 
   resources :gpsquests

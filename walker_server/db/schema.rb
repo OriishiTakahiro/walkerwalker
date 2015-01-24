@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20150123120044) do
+ActiveRecord::Schema.define(version: 20150123164947) do
 
   create_table "gpslogs", force: true do |t|
     t.string   "userhash"
@@ -46,8 +46,8 @@ ActiveRecord::Schema.define(version: 20150123120044) do
   end
 
   create_table "qrevents", force: true do |t|
-    t.string   "code",       null: false
-    t.integer  "reward_id",  null: false
+    t.string   "code"
+    t.integer  "reward"
     t.datetime "created_at"
     t.datetime "updated_at"
   end

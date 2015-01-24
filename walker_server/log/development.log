@@ -11862,3 +11862,691 @@ Can't verify CSRF token authenticity
   [1m[35mSQL (1.0ms)[0m  INSERT INTO "items_users" ("created_at", "item_id", "updated_at", "user_id") VALUES (?, ?, ?, ?)  [["created_at", "2015-01-23 12:05:03.968616"], ["item_id", 1], ["updated_at", "2015-01-23 12:05:03.968616"], ["user_id", 1]]
   [1m[36m (4.4ms)[0m  [1mcommit transaction[0m
 Completed 200 OK in 110ms (Views: 0.5ms | ActiveRecord: 28.5ms)
+
+
+Started GET "/qrevents" for 220.217.130.42 at 2015-01-24 01:34:35 +0900
+  [1m[36mActiveRecord::SchemaMigration Load (0.2ms)[0m  [1mSELECT "schema_migrations".* FROM "schema_migrations"[0m
+
+ActionController::RoutingError (No route matches [GET] "/qrevents"):
+  actionpack (4.1.8) lib/action_dispatch/middleware/debug_exceptions.rb:21:in `call'
+  actionpack (4.1.8) lib/action_dispatch/middleware/show_exceptions.rb:30:in `call'
+  railties (4.1.8) lib/rails/rack/logger.rb:38:in `call_app'
+  railties (4.1.8) lib/rails/rack/logger.rb:20:in `block in call'
+  activesupport (4.1.8) lib/active_support/tagged_logging.rb:68:in `block in tagged'
+  activesupport (4.1.8) lib/active_support/tagged_logging.rb:26:in `tagged'
+  activesupport (4.1.8) lib/active_support/tagged_logging.rb:68:in `tagged'
+  railties (4.1.8) lib/rails/rack/logger.rb:20:in `call'
+  actionpack (4.1.8) lib/action_dispatch/middleware/request_id.rb:21:in `call'
+  rack (1.5.2) lib/rack/methodoverride.rb:21:in `call'
+  rack (1.5.2) lib/rack/runtime.rb:17:in `call'
+  activesupport (4.1.8) lib/active_support/cache/strategy/local_cache_middleware.rb:26:in `call'
+  rack (1.5.2) lib/rack/lock.rb:17:in `call'
+  actionpack (4.1.8) lib/action_dispatch/middleware/static.rb:84:in `call'
+  rack (1.5.2) lib/rack/sendfile.rb:112:in `call'
+  railties (4.1.8) lib/rails/engine.rb:514:in `call'
+  railties (4.1.8) lib/rails/application.rb:144:in `call'
+  rack (1.5.2) lib/rack/lock.rb:17:in `call'
+  rack (1.5.2) lib/rack/content_length.rb:14:in `call'
+  rack (1.5.2) lib/rack/handler/webrick.rb:60:in `service'
+  /home/takahiro/.rvm/rubies/ruby-2.1.4/lib/ruby/2.1.0/webrick/httpserver.rb:138:in `service'
+  /home/takahiro/.rvm/rubies/ruby-2.1.4/lib/ruby/2.1.0/webrick/httpserver.rb:94:in `run'
+  /home/takahiro/.rvm/rubies/ruby-2.1.4/lib/ruby/2.1.0/webrick/server.rb:295:in `block in start_thread'
+
+
+  Rendered /home/takahiro/.rvm/gems/ruby-2.1.4@walker/gems/actionpack-4.1.8/lib/action_dispatch/middleware/templates/rescues/_trace.html.erb (3.9ms)
+  Rendered /home/takahiro/.rvm/gems/ruby-2.1.4@walker/gems/actionpack-4.1.8/lib/action_dispatch/middleware/templates/routes/_route.html.erb (21.5ms)
+  Rendered /home/takahiro/.rvm/gems/ruby-2.1.4@walker/gems/actionpack-4.1.8/lib/action_dispatch/middleware/templates/routes/_table.html.erb (8.4ms)
+  Rendered /home/takahiro/.rvm/gems/ruby-2.1.4@walker/gems/actionpack-4.1.8/lib/action_dispatch/middleware/templates/rescues/routing_error.html.erb within rescues/layout (150.0ms)
+
+
+Started GET "/qrevents" for 220.217.130.42 at 2015-01-24 01:50:07 +0900
+  [1m[36mActiveRecord::SchemaMigration Load (0.4ms)[0m  [1mSELECT "schema_migrations".* FROM "schema_migrations"[0m
+
+ActiveRecord::PendingMigrationError (
+
+Migrations are pending. To resolve this issue, run:
+
+	bin/rake db:migrate RAILS_ENV=development
+
+):
+  activerecord (4.1.8) lib/active_record/migration.rb:389:in `check_pending!'
+  activerecord (4.1.8) lib/active_record/migration.rb:377:in `call'
+  actionpack (4.1.8) lib/action_dispatch/middleware/callbacks.rb:29:in `block in call'
+  activesupport (4.1.8) lib/active_support/callbacks.rb:82:in `run_callbacks'
+  actionpack (4.1.8) lib/action_dispatch/middleware/callbacks.rb:27:in `call'
+  actionpack (4.1.8) lib/action_dispatch/middleware/reloader.rb:73:in `call'
+  actionpack (4.1.8) lib/action_dispatch/middleware/remote_ip.rb:76:in `call'
+  actionpack (4.1.8) lib/action_dispatch/middleware/debug_exceptions.rb:17:in `call'
+  actionpack (4.1.8) lib/action_dispatch/middleware/show_exceptions.rb:30:in `call'
+  railties (4.1.8) lib/rails/rack/logger.rb:38:in `call_app'
+  railties (4.1.8) lib/rails/rack/logger.rb:20:in `block in call'
+  activesupport (4.1.8) lib/active_support/tagged_logging.rb:68:in `block in tagged'
+  activesupport (4.1.8) lib/active_support/tagged_logging.rb:26:in `tagged'
+  activesupport (4.1.8) lib/active_support/tagged_logging.rb:68:in `tagged'
+  railties (4.1.8) lib/rails/rack/logger.rb:20:in `call'
+  actionpack (4.1.8) lib/action_dispatch/middleware/request_id.rb:21:in `call'
+  rack (1.5.2) lib/rack/methodoverride.rb:21:in `call'
+  rack (1.5.2) lib/rack/runtime.rb:17:in `call'
+  activesupport (4.1.8) lib/active_support/cache/strategy/local_cache_middleware.rb:26:in `call'
+  rack (1.5.2) lib/rack/lock.rb:17:in `call'
+  actionpack (4.1.8) lib/action_dispatch/middleware/static.rb:84:in `call'
+  rack (1.5.2) lib/rack/sendfile.rb:112:in `call'
+  railties (4.1.8) lib/rails/engine.rb:514:in `call'
+  railties (4.1.8) lib/rails/application.rb:144:in `call'
+  rack (1.5.2) lib/rack/lock.rb:17:in `call'
+  rack (1.5.2) lib/rack/content_length.rb:14:in `call'
+  rack (1.5.2) lib/rack/handler/webrick.rb:60:in `service'
+  /home/takahiro/.rvm/rubies/ruby-2.1.4/lib/ruby/2.1.0/webrick/httpserver.rb:138:in `service'
+  /home/takahiro/.rvm/rubies/ruby-2.1.4/lib/ruby/2.1.0/webrick/httpserver.rb:94:in `run'
+  /home/takahiro/.rvm/rubies/ruby-2.1.4/lib/ruby/2.1.0/webrick/server.rb:295:in `block in start_thread'
+
+
+  Rendered /home/takahiro/.rvm/gems/ruby-2.1.4@walker/gems/actionpack-4.1.8/lib/action_dispatch/middleware/templates/rescues/_source.erb (1.5ms)
+  Rendered /home/takahiro/.rvm/gems/ruby-2.1.4@walker/gems/actionpack-4.1.8/lib/action_dispatch/middleware/templates/rescues/_trace.html.erb (3.1ms)
+  Rendered /home/takahiro/.rvm/gems/ruby-2.1.4@walker/gems/actionpack-4.1.8/lib/action_dispatch/middleware/templates/rescues/_request_and_response.html.erb (2.7ms)
+  Rendered /home/takahiro/.rvm/gems/ruby-2.1.4@walker/gems/actionpack-4.1.8/lib/action_dispatch/middleware/templates/rescues/diagnostics.erb within rescues/layout (41.1ms)
+  [1m[36mActiveRecord::SchemaMigration Load (0.3ms)[0m  [1mSELECT "schema_migrations".* FROM "schema_migrations"[0m
+Migrating to CreateQrevents (20150123164947)
+  [1m[35m (0.2ms)[0m  begin transaction
+  [1m[36m (0.5ms)[0m  [1mCREATE TABLE "qrevents" ("id" INTEGER PRIMARY KEY AUTOINCREMENT NOT NULL, "code" varchar(255), "reward" integer, "created_at" datetime, "updated_at" datetime) [0m
+SQLite3::SQLException: table "qrevents" already exists: CREATE TABLE "qrevents" ("id" INTEGER PRIMARY KEY AUTOINCREMENT NOT NULL, "code" varchar(255), "reward" integer, "created_at" datetime, "updated_at" datetime) 
+  [1m[35m (0.2ms)[0m  rollback transaction
+  [1m[36mActiveRecord::SchemaMigration Load (0.3ms)[0m  [1mSELECT "schema_migrations".* FROM "schema_migrations"[0m
+Migrating to CreateQrevents (20150123164947)
+  [1m[35m (0.1ms)[0m  begin transaction
+  [1m[36m (0.6ms)[0m  [1mCREATE TABLE "qrevents" ("id" INTEGER PRIMARY KEY AUTOINCREMENT NOT NULL, "code" varchar(255), "reward" integer, "created_at" datetime, "updated_at" datetime) [0m
+  [1m[35mSQL (0.2ms)[0m  INSERT INTO "schema_migrations" ("version") VALUES (?)  [["version", "20150123164947"]]
+  [1m[36m (9.9ms)[0m  [1mcommit transaction[0m
+  [1m[35mActiveRecord::SchemaMigration Load (0.1ms)[0m  SELECT "schema_migrations".* FROM "schema_migrations"
+
+
+Started GET "/qrevents" for 220.217.130.42 at 2015-01-24 01:54:08 +0900
+  [1m[36mActiveRecord::SchemaMigration Load (0.6ms)[0m  [1mSELECT "schema_migrations".* FROM "schema_migrations"[0m
+Processing by QreventsController#index as HTML
+  [1m[35mQrevent Load (0.6ms)[0m  SELECT "qrevents".* FROM "qrevents"
+  Rendered qrevents/index.html.haml within layouts/application (18.6ms)
+Completed 200 OK in 1483ms (Views: 1400.9ms | ActiveRecord: 0.6ms)
+
+
+Started GET "/assets/qrevents.css?body=1" for 220.217.130.42 at 2015-01-24 01:54:10 +0900
+
+
+Started GET "/assets/gpsquests.css?body=1" for 220.217.130.42 at 2015-01-24 01:54:10 +0900
+
+
+Started GET "/assets/gpslogs.css?body=1" for 220.217.130.42 at 2015-01-24 01:54:10 +0900
+
+
+Started GET "/assets/scaffolds.css?body=1" for 220.217.130.42 at 2015-01-24 01:54:10 +0900
+
+
+Started GET "/assets/items_users.css?body=1" for 220.217.130.42 at 2015-01-24 01:54:10 +0900
+
+
+Started GET "/assets/steplogs.css?body=1" for 220.217.130.42 at 2015-01-24 01:54:10 +0900
+
+
+Started GET "/assets/api.css?body=1" for 220.217.130.42 at 2015-01-24 01:54:10 +0900
+
+
+Started GET "/assets/items.css?body=1" for 220.217.130.42 at 2015-01-24 01:54:10 +0900
+
+
+Started GET "/assets/qrlogs.css?body=1" for 220.217.130.42 at 2015-01-24 01:54:10 +0900
+
+
+Started GET "/assets/application.css?body=1" for 220.217.130.42 at 2015-01-24 01:54:10 +0900
+
+
+Started GET "/assets/users.css?body=1" for 220.217.130.42 at 2015-01-24 01:54:10 +0900
+
+
+Started GET "/assets/jquery_ujs.js?body=1" for 220.217.130.42 at 2015-01-24 01:54:10 +0900
+
+
+Started GET "/assets/turbolinks.js?body=1" for 220.217.130.42 at 2015-01-24 01:54:10 +0900
+
+
+Started GET "/assets/jquery.js?body=1" for 220.217.130.42 at 2015-01-24 01:54:10 +0900
+
+
+Started GET "/assets/api.js?body=1" for 220.217.130.42 at 2015-01-24 01:54:10 +0900
+
+
+Started GET "/assets/gpsquests.js?body=1" for 220.217.130.42 at 2015-01-24 01:54:10 +0900
+
+
+Started GET "/assets/gpslogs.js?body=1" for 220.217.130.42 at 2015-01-24 01:54:10 +0900
+
+
+Started GET "/assets/items.js?body=1" for 220.217.130.42 at 2015-01-24 01:54:10 +0900
+
+
+Started GET "/assets/items_users.js?body=1" for 220.217.130.42 at 2015-01-24 01:54:10 +0900
+
+
+Started GET "/assets/qrevents.js?body=1" for 220.217.130.42 at 2015-01-24 01:54:10 +0900
+
+
+Started GET "/assets/qrlogs.js?body=1" for 220.217.130.42 at 2015-01-24 01:54:10 +0900
+
+
+Started GET "/assets/steplogs.js?body=1" for 220.217.130.42 at 2015-01-24 01:54:10 +0900
+
+
+Started GET "/assets/users.js?body=1" for 220.217.130.42 at 2015-01-24 01:54:10 +0900
+
+
+Started GET "/assets/application.js?body=1" for 220.217.130.42 at 2015-01-24 01:54:10 +0900
+
+
+Started GET "/qrevents/new" for 220.217.130.42 at 2015-01-24 01:54:12 +0900
+Processing by QreventsController#new as HTML
+  Rendered qrevents/_form.html.haml (61.7ms)
+  Rendered qrevents/new.html.haml within layouts/application (75.8ms)
+Completed 200 OK in 420ms (Views: 414.4ms | ActiveRecord: 2.1ms)
+
+
+Started POST "/qrevents" for 220.217.130.42 at 2015-01-24 02:03:08 +0900
+  [1m[36mActiveRecord::SchemaMigration Load (0.3ms)[0m  [1mSELECT "schema_migrations".* FROM "schema_migrations"[0m
+Processing by QreventsController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"qyoxBlLDDc8DlM9oATqyI5GcBK+cc1euaSgNGyq08EE=", "qrevent"=>{"code"=>"5hq4tkcu1snrijg83y9zlebvf", "reward"=>"1"}, "commit"=>"Save"}
+  [1m[35m (0.3ms)[0m  begin transaction
+  [1m[36mSQL (0.9ms)[0m  [1mINSERT INTO "qrevents" ("code", "created_at", "reward", "updated_at") VALUES (?, ?, ?, ?)[0m  [["code", "5hq4tkcu1snrijg83y9zlebvf"], ["created_at", "2015-01-23 17:03:08.777441"], ["reward", 1], ["updated_at", "2015-01-23 17:03:08.777441"]]
+  [1m[35m (4.7ms)[0m  commit transaction
+Redirected to http://219.94.232.92:3000/qrevents/1
+Completed 302 Found in 138ms (ActiveRecord: 7.1ms)
+
+
+Started GET "/qrevents/1" for 220.217.130.42 at 2015-01-24 02:03:08 +0900
+Processing by QreventsController#show as HTML
+  Parameters: {"id"=>"1"}
+  [1m[36mQrevent Load (0.6ms)[0m  [1mSELECT  "qrevents".* FROM "qrevents"  WHERE "qrevents"."id" = ? LIMIT 1[0m  [["id", 1]]
+  Rendered qrevents/show.html.haml within layouts/application (9.7ms)
+Completed 200 OK in 696ms (Views: 681.3ms | ActiveRecord: 0.6ms)
+
+
+Started GET "/assets/api.css?body=1" for 220.217.130.42 at 2015-01-24 02:03:09 +0900
+
+
+Started GET "/assets/gpslogs.css?body=1" for 220.217.130.42 at 2015-01-24 02:03:09 +0900
+
+
+Started GET "/assets/gpsquests.css?body=1" for 220.217.130.42 at 2015-01-24 02:03:09 +0900
+
+
+Started GET "/assets/scaffolds.css?body=1" for 220.217.130.42 at 2015-01-24 02:03:09 +0900
+
+
+Started GET "/assets/qrevents.css?body=1" for 220.217.130.42 at 2015-01-24 02:03:09 +0900
+
+
+Started GET "/assets/items.css?body=1" for 220.217.130.42 at 2015-01-24 02:03:09 +0900
+
+
+Started GET "/assets/steplogs.css?body=1" for 220.217.130.42 at 2015-01-24 02:03:09 +0900
+
+
+Started GET "/assets/qrlogs.css?body=1" for 220.217.130.42 at 2015-01-24 02:03:09 +0900
+
+
+Started GET "/assets/users.css?body=1" for 220.217.130.42 at 2015-01-24 02:03:09 +0900
+
+
+Started GET "/assets/application.css?body=1" for 220.217.130.42 at 2015-01-24 02:03:09 +0900
+
+
+Started GET "/assets/jquery.js?body=1" for 220.217.130.42 at 2015-01-24 02:03:09 +0900
+
+
+Started GET "/assets/jquery_ujs.js?body=1" for 220.217.130.42 at 2015-01-24 02:03:09 +0900
+
+
+Started GET "/assets/turbolinks.js?body=1" for 220.217.130.42 at 2015-01-24 02:03:10 +0900
+
+
+Started GET "/assets/gpslogs.js?body=1" for 220.217.130.42 at 2015-01-24 02:03:10 +0900
+
+
+Started GET "/assets/api.js?body=1" for 220.217.130.42 at 2015-01-24 02:03:10 +0900
+
+
+Started GET "/assets/gpsquests.js?body=1" for 220.217.130.42 at 2015-01-24 02:03:10 +0900
+
+
+Started GET "/assets/items.js?body=1" for 220.217.130.42 at 2015-01-24 02:03:10 +0900
+
+
+Started GET "/assets/qrevents.js?body=1" for 220.217.130.42 at 2015-01-24 02:03:10 +0900
+
+
+Started GET "/assets/qrlogs.js?body=1" for 220.217.130.42 at 2015-01-24 02:03:10 +0900
+
+
+Started GET "/assets/steplogs.js?body=1" for 220.217.130.42 at 2015-01-24 02:03:10 +0900
+
+
+Started GET "/assets/users.js?body=1" for 220.217.130.42 at 2015-01-24 02:03:10 +0900
+
+
+Started GET "/assets/application.js?body=1" for 220.217.130.42 at 2015-01-24 02:03:10 +0900
+
+
+Started GET "/qrevents" for 220.217.130.42 at 2015-01-24 02:03:13 +0900
+Processing by QreventsController#index as HTML
+  [1m[35mQrevent Load (0.9ms)[0m  SELECT "qrevents".* FROM "qrevents"
+  Rendered qrevents/index.html.haml within layouts/application (32.7ms)
+Completed 200 OK in 615ms (Views: 611.3ms | ActiveRecord: 0.9ms)
+
+
+Started POST "/api/post/add_step" for 182.250.2.14 at 2015-01-24 02:45:26 +0900
+
+ActionController::RoutingError (No route matches [POST] "/api/post/add_step"):
+  actionpack (4.1.8) lib/action_dispatch/middleware/debug_exceptions.rb:21:in `call'
+  actionpack (4.1.8) lib/action_dispatch/middleware/show_exceptions.rb:30:in `call'
+  railties (4.1.8) lib/rails/rack/logger.rb:38:in `call_app'
+  railties (4.1.8) lib/rails/rack/logger.rb:20:in `block in call'
+  activesupport (4.1.8) lib/active_support/tagged_logging.rb:68:in `block in tagged'
+  activesupport (4.1.8) lib/active_support/tagged_logging.rb:26:in `tagged'
+  activesupport (4.1.8) lib/active_support/tagged_logging.rb:68:in `tagged'
+  railties (4.1.8) lib/rails/rack/logger.rb:20:in `call'
+  actionpack (4.1.8) lib/action_dispatch/middleware/request_id.rb:21:in `call'
+  rack (1.5.2) lib/rack/methodoverride.rb:21:in `call'
+  rack (1.5.2) lib/rack/runtime.rb:17:in `call'
+  activesupport (4.1.8) lib/active_support/cache/strategy/local_cache_middleware.rb:26:in `call'
+  rack (1.5.2) lib/rack/lock.rb:17:in `call'
+  actionpack (4.1.8) lib/action_dispatch/middleware/static.rb:84:in `call'
+  rack (1.5.2) lib/rack/sendfile.rb:112:in `call'
+  railties (4.1.8) lib/rails/engine.rb:514:in `call'
+  railties (4.1.8) lib/rails/application.rb:144:in `call'
+  rack (1.5.2) lib/rack/lock.rb:17:in `call'
+  rack (1.5.2) lib/rack/content_length.rb:14:in `call'
+  rack (1.5.2) lib/rack/handler/webrick.rb:60:in `service'
+  /home/takahiro/.rvm/rubies/ruby-2.1.4/lib/ruby/2.1.0/webrick/httpserver.rb:138:in `service'
+  /home/takahiro/.rvm/rubies/ruby-2.1.4/lib/ruby/2.1.0/webrick/httpserver.rb:94:in `run'
+  /home/takahiro/.rvm/rubies/ruby-2.1.4/lib/ruby/2.1.0/webrick/server.rb:295:in `block in start_thread'
+
+
+  Rendered /home/takahiro/.rvm/gems/ruby-2.1.4@walker/gems/actionpack-4.1.8/lib/action_dispatch/middleware/templates/rescues/_trace.html.erb (4.6ms)
+  Rendered /home/takahiro/.rvm/gems/ruby-2.1.4@walker/gems/actionpack-4.1.8/lib/action_dispatch/middleware/templates/routes/_route.html.erb (46.0ms)
+  Rendered /home/takahiro/.rvm/gems/ruby-2.1.4@walker/gems/actionpack-4.1.8/lib/action_dispatch/middleware/templates/routes/_table.html.erb (9.8ms)
+  Rendered /home/takahiro/.rvm/gems/ruby-2.1.4@walker/gems/actionpack-4.1.8/lib/action_dispatch/middleware/templates/rescues/routing_error.html.erb within rescues/layout (242.4ms)
+
+
+Started POST "/api/post/post_qr_code" for 182.250.2.14 at 2015-01-24 02:47:43 +0900
+Processing by ApiController#postQRcode as HTML
+  Parameters: {"userhash"=>"kyweuyfoyfvfczlwxwqsjcdhrp", "code"=>"5hq4tkcu1snrijg83y9zlebvf"}
+Can't verify CSRF token authenticity
+  [1m[36m (0.2ms)[0m  [1mbegin transaction[0m
+  [1m[35mSQL (0.5ms)[0m  INSERT INTO "qrlogs" ("code", "created_at", "updated_at", "userhash") VALUES (?, ?, ?, ?)  [["code", "5hq4tkcu1snrijg83y9zlebvf"], ["created_at", "2015-01-23 17:47:43.606394"], ["updated_at", "2015-01-23 17:47:43.606394"], ["userhash", "kyweuyfoyfvfczlwxwqsjcdhrp"]]
+  [1m[36m (4.9ms)[0m  [1mcommit transaction[0m
+Completed 500 Internal Server Error in 40ms
+
+NameError (uninitialized constant ApiController::Qrquest):
+  app/controllers/api_controller.rb:111:in `postQRcode'
+
+
+  Rendered /home/takahiro/.rvm/gems/ruby-2.1.4@walker/gems/actionpack-4.1.8/lib/action_dispatch/middleware/templates/rescues/_source.erb (2.2ms)
+  Rendered /home/takahiro/.rvm/gems/ruby-2.1.4@walker/gems/actionpack-4.1.8/lib/action_dispatch/middleware/templates/rescues/_trace.html.erb (2.8ms)
+  Rendered /home/takahiro/.rvm/gems/ruby-2.1.4@walker/gems/actionpack-4.1.8/lib/action_dispatch/middleware/templates/rescues/_request_and_response.html.erb (2.2ms)
+  Rendered /home/takahiro/.rvm/gems/ruby-2.1.4@walker/gems/actionpack-4.1.8/lib/action_dispatch/middleware/templates/rescues/diagnostics.erb within rescues/layout (42.2ms)
+
+
+Started POST "/api/post/post_qr_code" for 182.250.2.14 at 2015-01-24 02:49:32 +0900
+Processing by ApiController#postQRcode as HTML
+  Parameters: {"userhash"=>"kyweuyfoyfvfczlwxwqsjcdhrp", "code"=>"5hq4tkcu1snrijg83y9zlebvf"}
+Can't verify CSRF token authenticity
+  [1m[35m (0.2ms)[0m  begin transaction
+  [1m[36mSQL (0.6ms)[0m  [1mINSERT INTO "qrlogs" ("code", "created_at", "updated_at", "userhash") VALUES (?, ?, ?, ?)[0m  [["code", "5hq4tkcu1snrijg83y9zlebvf"], ["created_at", "2015-01-23 17:49:33.070425"], ["updated_at", "2015-01-23 17:49:33.070425"], ["userhash", "kyweuyfoyfvfczlwxwqsjcdhrp"]]
+  [1m[35m (11.9ms)[0m  commit transaction
+  [1m[36mQrevent Load (0.5ms)[0m  [1mSELECT  "qrevents".* FROM "qrevents"  WHERE "qrevents"."code" = '5hq4tkcu1snrijg83y9zlebvf' LIMIT 1[0m
+  [1m[35mUser Load (0.8ms)[0m  SELECT  "users".* FROM "users"  WHERE "users"."userhash" = 'kyweuyfoyfvfczlwxwqsjcdhrp' LIMIT 1
+Completed 500 Internal Server Error in 75ms
+
+NoMethodError (undefined method `id' for nil:NilClass):
+  app/controllers/api_controller.rb:111:in `postQRcode'
+
+
+  Rendered /home/takahiro/.rvm/gems/ruby-2.1.4@walker/gems/actionpack-4.1.8/lib/action_dispatch/middleware/templates/rescues/_source.erb (2.1ms)
+  Rendered /home/takahiro/.rvm/gems/ruby-2.1.4@walker/gems/actionpack-4.1.8/lib/action_dispatch/middleware/templates/rescues/_trace.html.erb (3.6ms)
+  Rendered /home/takahiro/.rvm/gems/ruby-2.1.4@walker/gems/actionpack-4.1.8/lib/action_dispatch/middleware/templates/rescues/_request_and_response.html.erb (2.9ms)
+  Rendered /home/takahiro/.rvm/gems/ruby-2.1.4@walker/gems/actionpack-4.1.8/lib/action_dispatch/middleware/templates/rescues/diagnostics.erb within rescues/layout (46.9ms)
+
+
+Started POST "/api/post/post_qr_code" for 182.250.2.14 at 2015-01-24 02:49:36 +0900
+Processing by ApiController#postQRcode as HTML
+  Parameters: {"userhash"=>"kyweuyfoyfvfczlwxwqsjcdhrp", "code"=>"5hq4tkcu1snrijg83y9zlebvf"}
+Can't verify CSRF token authenticity
+  [1m[36m (0.2ms)[0m  [1mbegin transaction[0m
+  [1m[35mSQL (0.8ms)[0m  INSERT INTO "qrlogs" ("code", "created_at", "updated_at", "userhash") VALUES (?, ?, ?, ?)  [["code", "5hq4tkcu1snrijg83y9zlebvf"], ["created_at", "2015-01-23 17:49:36.040424"], ["updated_at", "2015-01-23 17:49:36.040424"], ["userhash", "kyweuyfoyfvfczlwxwqsjcdhrp"]]
+  [1m[36m (12.1ms)[0m  [1mcommit transaction[0m
+  [1m[35mQrevent Load (0.5ms)[0m  SELECT  "qrevents".* FROM "qrevents"  WHERE "qrevents"."code" = '5hq4tkcu1snrijg83y9zlebvf' LIMIT 1
+  [1m[36mUser Load (0.3ms)[0m  [1mSELECT  "users".* FROM "users"  WHERE "users"."userhash" = 'kyweuyfoyfvfczlwxwqsjcdhrp' LIMIT 1[0m
+Completed 500 Internal Server Error in 25ms
+
+NoMethodError (undefined method `id' for nil:NilClass):
+  app/controllers/api_controller.rb:111:in `postQRcode'
+
+
+  Rendered /home/takahiro/.rvm/gems/ruby-2.1.4@walker/gems/actionpack-4.1.8/lib/action_dispatch/middleware/templates/rescues/_source.erb (6.7ms)
+  Rendered /home/takahiro/.rvm/gems/ruby-2.1.4@walker/gems/actionpack-4.1.8/lib/action_dispatch/middleware/templates/rescues/_trace.html.erb (5.2ms)
+  Rendered /home/takahiro/.rvm/gems/ruby-2.1.4@walker/gems/actionpack-4.1.8/lib/action_dispatch/middleware/templates/rescues/_request_and_response.html.erb (3.7ms)
+  Rendered /home/takahiro/.rvm/gems/ruby-2.1.4@walker/gems/actionpack-4.1.8/lib/action_dispatch/middleware/templates/rescues/diagnostics.erb within rescues/layout (97.4ms)
+
+
+Started GET "/users" for 220.217.130.42 at 2015-01-24 02:50:42 +0900
+Processing by UsersController#index as HTML
+  [1m[35mUser Load (0.4ms)[0m  SELECT "users".* FROM "users"
+  Rendered users/index.html.haml within layouts/application (13.0ms)
+Completed 200 OK in 223ms (Views: 220.9ms | ActiveRecord: 0.4ms)
+
+
+Started GET "/assets/qrevents.css?body=1" for 220.217.130.42 at 2015-01-24 02:50:43 +0900
+
+
+Started GET "/assets/gpsquests.css?body=1" for 220.217.130.42 at 2015-01-24 02:50:43 +0900
+
+
+Started GET "/assets/items_users.css?body=1" for 220.217.130.42 at 2015-01-24 02:50:43 +0900
+
+
+Started GET "/assets/qrlogs.css?body=1" for 220.217.130.42 at 2015-01-24 02:50:43 +0900
+
+
+Started GET "/assets/items.css?body=1" for 220.217.130.42 at 2015-01-24 02:50:43 +0900
+
+
+Started GET "/assets/scaffolds.css?body=1" for 220.217.130.42 at 2015-01-24 02:50:43 +0900
+
+
+Started GET "/assets/api.css?body=1" for 220.217.130.42 at 2015-01-24 02:50:43 +0900
+
+
+Started GET "/assets/users.css?body=1" for 220.217.130.42 at 2015-01-24 02:50:43 +0900
+
+
+Started GET "/assets/gpslogs.css?body=1" for 220.217.130.42 at 2015-01-24 02:50:43 +0900
+
+
+Started GET "/assets/steplogs.css?body=1" for 220.217.130.42 at 2015-01-24 02:50:43 +0900
+
+
+Started GET "/assets/application.css?body=1" for 220.217.130.42 at 2015-01-24 02:50:43 +0900
+
+
+Started GET "/assets/gpslogs.js?body=1" for 220.217.130.42 at 2015-01-24 02:50:43 +0900
+
+
+Started GET "/assets/jquery.js?body=1" for 220.217.130.42 at 2015-01-24 02:50:43 +0900
+
+
+Started GET "/assets/turbolinks.js?body=1" for 220.217.130.42 at 2015-01-24 02:50:43 +0900
+
+
+Started GET "/assets/jquery_ujs.js?body=1" for 220.217.130.42 at 2015-01-24 02:50:43 +0900
+
+
+Started GET "/assets/api.js?body=1" for 220.217.130.42 at 2015-01-24 02:50:43 +0900
+
+
+Started GET "/assets/gpsquests.js?body=1" for 220.217.130.42 at 2015-01-24 02:50:43 +0900
+
+
+Started GET "/assets/items.js?body=1" for 220.217.130.42 at 2015-01-24 02:50:43 +0900
+
+
+Started GET "/assets/items_users.js?body=1" for 220.217.130.42 at 2015-01-24 02:50:43 +0900
+
+
+Started GET "/assets/qrevents.js?body=1" for 220.217.130.42 at 2015-01-24 02:50:43 +0900
+
+
+Started GET "/assets/qrlogs.js?body=1" for 220.217.130.42 at 2015-01-24 02:50:43 +0900
+
+
+Started GET "/assets/steplogs.js?body=1" for 220.217.130.42 at 2015-01-24 02:50:43 +0900
+
+
+Started GET "/assets/users.js?body=1" for 220.217.130.42 at 2015-01-24 02:50:43 +0900
+
+
+Started GET "/assets/application.js?body=1" for 220.217.130.42 at 2015-01-24 02:50:43 +0900
+
+
+Started POST "/api/post/post_qr_code" for 182.250.2.14 at 2015-01-24 02:51:41 +0900
+Processing by ApiController#postQRcode as HTML
+  Parameters: {"userhash"=>"j1fw8vg9z57mr4c3biyohulk6", "code"=>"5hq4tkcu1snrijg83y9zlebvf"}
+Can't verify CSRF token authenticity
+  [1m[36m (0.2ms)[0m  [1mbegin transaction[0m
+  [1m[35mSQL (0.5ms)[0m  INSERT INTO "qrlogs" ("code", "created_at", "updated_at", "userhash") VALUES (?, ?, ?, ?)  [["code", "5hq4tkcu1snrijg83y9zlebvf"], ["created_at", "2015-01-23 17:51:41.880195"], ["updated_at", "2015-01-23 17:51:41.880195"], ["userhash", "j1fw8vg9z57mr4c3biyohulk6"]]
+  [1m[36m (3.6ms)[0m  [1mcommit transaction[0m
+  [1m[35mQrevent Load (0.7ms)[0m  SELECT  "qrevents".* FROM "qrevents"  WHERE "qrevents"."code" = '5hq4tkcu1snrijg83y9zlebvf' LIMIT 1
+  [1m[36mUser Load (1.0ms)[0m  [1mSELECT  "users".* FROM "users"  WHERE "users"."userhash" = 'j1fw8vg9z57mr4c3biyohulk6' LIMIT 1[0m
+Completed 500 Internal Server Error in 42ms
+
+NoMethodError (undefined method `new' for #<ItemsUsers:0x000000049561a0>):
+  app/controllers/api_controller.rb:111:in `postQRcode'
+
+
+  Rendered /home/takahiro/.rvm/gems/ruby-2.1.4@walker/gems/actionpack-4.1.8/lib/action_dispatch/middleware/templates/rescues/_source.erb (3.2ms)
+  Rendered /home/takahiro/.rvm/gems/ruby-2.1.4@walker/gems/actionpack-4.1.8/lib/action_dispatch/middleware/templates/rescues/_trace.html.erb (5.2ms)
+  Rendered /home/takahiro/.rvm/gems/ruby-2.1.4@walker/gems/actionpack-4.1.8/lib/action_dispatch/middleware/templates/rescues/_request_and_response.html.erb (3.8ms)
+  Rendered /home/takahiro/.rvm/gems/ruby-2.1.4@walker/gems/actionpack-4.1.8/lib/action_dispatch/middleware/templates/rescues/diagnostics.erb within rescues/layout (61.1ms)
+
+
+Started POST "/api/post/post_qr_code" for 182.250.2.14 at 2015-01-24 02:53:15 +0900
+Processing by ApiController#postQRcode as HTML
+  Parameters: {"userhash"=>"j1fw8vg9z57mr4c3biyohulk6", "code"=>"5hq4tkcu1snrijg83y9zlebvf"}
+Can't verify CSRF token authenticity
+  [1m[35m (0.4ms)[0m  begin transaction
+  [1m[36mSQL (1.5ms)[0m  [1mINSERT INTO "qrlogs" ("code", "created_at", "updated_at", "userhash") VALUES (?, ?, ?, ?)[0m  [["code", "5hq4tkcu1snrijg83y9zlebvf"], ["created_at", "2015-01-23 17:53:15.974016"], ["updated_at", "2015-01-23 17:53:15.974016"], ["userhash", "j1fw8vg9z57mr4c3biyohulk6"]]
+  [1m[35m (16.5ms)[0m  commit transaction
+  [1m[36mQrevent Load (0.9ms)[0m  [1mSELECT  "qrevents".* FROM "qrevents"  WHERE "qrevents"."code" = '5hq4tkcu1snrijg83y9zlebvf' LIMIT 1[0m
+  [1m[35mUser Load (0.8ms)[0m  SELECT  "users".* FROM "users"  WHERE "users"."userhash" = 'j1fw8vg9z57mr4c3biyohulk6' LIMIT 1
+Completed 500 Internal Server Error in 206ms
+
+ActionView::MissingTemplate (Missing template api/postQRcode, application/postQRcode with {:locale=>[:en], :formats=>[:html], :variants=>[], :handlers=>[:erb, :builder, :raw, :ruby, :coffee, :jbuilder, :haml]}. Searched in:
+  * "/home/takahiro/classes/systemdesign1/walker/walker_server/app/views"
+):
+  actionview (4.1.8) lib/action_view/path_set.rb:46:in `find'
+  actionview (4.1.8) lib/action_view/lookup_context.rb:124:in `find'
+  actionview (4.1.8) lib/action_view/renderer/abstract_renderer.rb:18:in `find_template'
+  actionview (4.1.8) lib/action_view/renderer/template_renderer.rb:41:in `determine_template'
+  actionview (4.1.8) lib/action_view/renderer/template_renderer.rb:8:in `render'
+  actionview (4.1.8) lib/action_view/renderer/renderer.rb:42:in `render_template'
+  actionview (4.1.8) lib/action_view/renderer/renderer.rb:23:in `render'
+  actionview (4.1.8) lib/action_view/rendering.rb:99:in `_render_template'
+  actionpack (4.1.8) lib/action_controller/metal/streaming.rb:217:in `_render_template'
+  actionview (4.1.8) lib/action_view/rendering.rb:82:in `render_to_body'
+  actionpack (4.1.8) lib/action_controller/metal/rendering.rb:32:in `render_to_body'
+  actionpack (4.1.8) lib/action_controller/metal/renderers.rb:32:in `render_to_body'
+  actionpack (4.1.8) lib/abstract_controller/rendering.rb:25:in `render'
+  actionpack (4.1.8) lib/action_controller/metal/rendering.rb:16:in `render'
+  actionpack (4.1.8) lib/action_controller/metal/instrumentation.rb:41:in `block (2 levels) in render'
+  activesupport (4.1.8) lib/active_support/core_ext/benchmark.rb:12:in `block in ms'
+  /home/takahiro/.rvm/rubies/ruby-2.1.4/lib/ruby/2.1.0/benchmark.rb:294:in `realtime'
+  activesupport (4.1.8) lib/active_support/core_ext/benchmark.rb:12:in `ms'
+  actionpack (4.1.8) lib/action_controller/metal/instrumentation.rb:41:in `block in render'
+  actionpack (4.1.8) lib/action_controller/metal/instrumentation.rb:84:in `cleanup_view_runtime'
+  activerecord (4.1.8) lib/active_record/railties/controller_runtime.rb:25:in `cleanup_view_runtime'
+  actionpack (4.1.8) lib/action_controller/metal/instrumentation.rb:40:in `render'
+  actionpack (4.1.8) lib/action_controller/metal/implicit_render.rb:10:in `default_render'
+  actionpack (4.1.8) lib/action_controller/metal/implicit_render.rb:5:in `send_action'
+  actionpack (4.1.8) lib/abstract_controller/base.rb:189:in `process_action'
+  actionpack (4.1.8) lib/action_controller/metal/rendering.rb:10:in `process_action'
+  actionpack (4.1.8) lib/abstract_controller/callbacks.rb:20:in `block in process_action'
+  activesupport (4.1.8) lib/active_support/callbacks.rb:113:in `call'
+  activesupport (4.1.8) lib/active_support/callbacks.rb:113:in `call'
+  activesupport (4.1.8) lib/active_support/callbacks.rb:229:in `block in halting'
+  activesupport (4.1.8) lib/active_support/callbacks.rb:229:in `call'
+  activesupport (4.1.8) lib/active_support/callbacks.rb:229:in `block in halting'
+  activesupport (4.1.8) lib/active_support/callbacks.rb:166:in `call'
+  activesupport (4.1.8) lib/active_support/callbacks.rb:166:in `block in halting'
+  activesupport (4.1.8) lib/active_support/callbacks.rb:166:in `call'
+  activesupport (4.1.8) lib/active_support/callbacks.rb:166:in `block in halting'
+  activesupport (4.1.8) lib/active_support/callbacks.rb:166:in `call'
+  activesupport (4.1.8) lib/active_support/callbacks.rb:166:in `block in halting'
+  activesupport (4.1.8) lib/active_support/callbacks.rb:86:in `call'
+  activesupport (4.1.8) lib/active_support/callbacks.rb:86:in `run_callbacks'
+  actionpack (4.1.8) lib/abstract_controller/callbacks.rb:19:in `process_action'
+  actionpack (4.1.8) lib/action_controller/metal/rescue.rb:29:in `process_action'
+  actionpack (4.1.8) lib/action_controller/metal/instrumentation.rb:31:in `block in process_action'
+  activesupport (4.1.8) lib/active_support/notifications.rb:159:in `block in instrument'
+  activesupport (4.1.8) lib/active_support/notifications/instrumenter.rb:20:in `instrument'
+  activesupport (4.1.8) lib/active_support/notifications.rb:159:in `instrument'
+  actionpack (4.1.8) lib/action_controller/metal/instrumentation.rb:30:in `process_action'
+  actionpack (4.1.8) lib/action_controller/metal/params_wrapper.rb:250:in `process_action'
+  activerecord (4.1.8) lib/active_record/railties/controller_runtime.rb:18:in `process_action'
+  actionpack (4.1.8) lib/abstract_controller/base.rb:136:in `process'
+  actionview (4.1.8) lib/action_view/rendering.rb:30:in `process'
+  actionpack (4.1.8) lib/action_controller/metal.rb:196:in `dispatch'
+  actionpack (4.1.8) lib/action_controller/metal/rack_delegation.rb:13:in `dispatch'
+  actionpack (4.1.8) lib/action_controller/metal.rb:232:in `block in action'
+  actionpack (4.1.8) lib/action_dispatch/routing/route_set.rb:82:in `call'
+  actionpack (4.1.8) lib/action_dispatch/routing/route_set.rb:82:in `dispatch'
+  actionpack (4.1.8) lib/action_dispatch/routing/route_set.rb:50:in `call'
+  actionpack (4.1.8) lib/action_dispatch/journey/router.rb:73:in `block in call'
+  actionpack (4.1.8) lib/action_dispatch/journey/router.rb:59:in `each'
+  actionpack (4.1.8) lib/action_dispatch/journey/router.rb:59:in `call'
+  actionpack (4.1.8) lib/action_dispatch/routing/route_set.rb:678:in `call'
+  rack (1.5.2) lib/rack/etag.rb:23:in `call'
+  rack (1.5.2) lib/rack/conditionalget.rb:35:in `call'
+  rack (1.5.2) lib/rack/head.rb:11:in `call'
+  actionpack (4.1.8) lib/action_dispatch/middleware/params_parser.rb:27:in `call'
+  actionpack (4.1.8) lib/action_dispatch/middleware/flash.rb:254:in `call'
+  rack (1.5.2) lib/rack/session/abstract/id.rb:225:in `context'
+  rack (1.5.2) lib/rack/session/abstract/id.rb:220:in `call'
+  actionpack (4.1.8) lib/action_dispatch/middleware/cookies.rb:560:in `call'
+  activerecord (4.1.8) lib/active_record/query_cache.rb:36:in `call'
+  activerecord (4.1.8) lib/active_record/connection_adapters/abstract/connection_pool.rb:621:in `call'
+  activerecord (4.1.8) lib/active_record/migration.rb:380:in `call'
+  actionpack (4.1.8) lib/action_dispatch/middleware/callbacks.rb:29:in `block in call'
+  activesupport (4.1.8) lib/active_support/callbacks.rb:82:in `run_callbacks'
+  actionpack (4.1.8) lib/action_dispatch/middleware/callbacks.rb:27:in `call'
+  actionpack (4.1.8) lib/action_dispatch/middleware/reloader.rb:73:in `call'
+  actionpack (4.1.8) lib/action_dispatch/middleware/remote_ip.rb:76:in `call'
+  actionpack (4.1.8) lib/action_dispatch/middleware/debug_exceptions.rb:17:in `call'
+  actionpack (4.1.8) lib/action_dispatch/middleware/show_exceptions.rb:30:in `call'
+  railties (4.1.8) lib/rails/rack/logger.rb:38:in `call_app'
+  railties (4.1.8) lib/rails/rack/logger.rb:20:in `block in call'
+  activesupport (4.1.8) lib/active_support/tagged_logging.rb:68:in `block in tagged'
+  activesupport (4.1.8) lib/active_support/tagged_logging.rb:26:in `tagged'
+  activesupport (4.1.8) lib/active_support/tagged_logging.rb:68:in `tagged'
+  railties (4.1.8) lib/rails/rack/logger.rb:20:in `call'
+  actionpack (4.1.8) lib/action_dispatch/middleware/request_id.rb:21:in `call'
+  rack (1.5.2) lib/rack/methodoverride.rb:21:in `call'
+  rack (1.5.2) lib/rack/runtime.rb:17:in `call'
+  activesupport (4.1.8) lib/active_support/cache/strategy/local_cache_middleware.rb:26:in `call'
+  rack (1.5.2) lib/rack/lock.rb:17:in `call'
+  actionpack (4.1.8) lib/action_dispatch/middleware/static.rb:84:in `call'
+  rack (1.5.2) lib/rack/sendfile.rb:112:in `call'
+  railties (4.1.8) lib/rails/engine.rb:514:in `call'
+  railties (4.1.8) lib/rails/application.rb:144:in `call'
+  rack (1.5.2) lib/rack/lock.rb:17:in `call'
+  rack (1.5.2) lib/rack/content_length.rb:14:in `call'
+  rack (1.5.2) lib/rack/handler/webrick.rb:60:in `service'
+  /home/takahiro/.rvm/rubies/ruby-2.1.4/lib/ruby/2.1.0/webrick/httpserver.rb:138:in `service'
+  /home/takahiro/.rvm/rubies/ruby-2.1.4/lib/ruby/2.1.0/webrick/httpserver.rb:94:in `run'
+  /home/takahiro/.rvm/rubies/ruby-2.1.4/lib/ruby/2.1.0/webrick/server.rb:295:in `block in start_thread'
+
+
+  Rendered /home/takahiro/.rvm/gems/ruby-2.1.4@walker/gems/actionpack-4.1.8/lib/action_dispatch/middleware/templates/rescues/missing_template.html.erb within rescues/layout (1.9ms)
+
+
+Started POST "/api/post/post_qr_code" for 182.250.2.14 at 2015-01-24 02:54:05 +0900
+Processing by ApiController#postQRcode as HTML
+  Parameters: {"userhash"=>"j1fw8vg9z57mr4c3biyohulk6", "code"=>"5hq4tkcu1snrijg83y9zlebvf"}
+Can't verify CSRF token authenticity
+  [1m[36m (0.2ms)[0m  [1mbegin transaction[0m
+  [1m[35mSQL (0.6ms)[0m  INSERT INTO "qrlogs" ("code", "created_at", "updated_at", "userhash") VALUES (?, ?, ?, ?)  [["code", "5hq4tkcu1snrijg83y9zlebvf"], ["created_at", "2015-01-23 17:54:05.916479"], ["updated_at", "2015-01-23 17:54:05.916479"], ["userhash", "j1fw8vg9z57mr4c3biyohulk6"]]
+  [1m[36m (65.4ms)[0m  [1mcommit transaction[0m
+  [1m[35mQrevent Load (0.3ms)[0m  SELECT  "qrevents".* FROM "qrevents"  WHERE "qrevents"."code" = '5hq4tkcu1snrijg83y9zlebvf' LIMIT 1
+  [1m[36mUser Load (0.5ms)[0m  [1mSELECT  "users".* FROM "users"  WHERE "users"."userhash" = 'j1fw8vg9z57mr4c3biyohulk6' LIMIT 1[0m
+Completed 200 OK in 144ms (Views: 0.8ms | ActiveRecord: 71.3ms)
+
+
+Started POST "/api/post/post_qr_code" for 182.250.2.14 at 2015-01-24 02:54:21 +0900
+Processing by ApiController#postQRcode as HTML
+  Parameters: {"userhash"=>"j1fw8vg9z57mr4c3biyohulk6", "code"=>"5hq4tkcu1snrijg83y9zlebvf"}
+Can't verify CSRF token authenticity
+  [1m[35m (0.2ms)[0m  begin transaction
+  [1m[36mSQL (0.4ms)[0m  [1mINSERT INTO "qrlogs" ("code", "created_at", "updated_at", "userhash") VALUES (?, ?, ?, ?)[0m  [["code", "5hq4tkcu1snrijg83y9zlebvf"], ["created_at", "2015-01-23 17:54:21.343318"], ["updated_at", "2015-01-23 17:54:21.343318"], ["userhash", "j1fw8vg9z57mr4c3biyohulk6"]]
+  [1m[35m (10.8ms)[0m  commit transaction
+  [1m[36mQrevent Load (0.4ms)[0m  [1mSELECT  "qrevents".* FROM "qrevents"  WHERE "qrevents"."code" = '5hq4tkcu1snrijg83y9zlebvf' LIMIT 1[0m
+  [1m[35mUser Load (0.3ms)[0m  SELECT  "users".* FROM "users"  WHERE "users"."userhash" = 'j1fw8vg9z57mr4c3biyohulk6' LIMIT 1
+Completed 200 OK in 23ms (Views: 0.4ms | ActiveRecord: 12.1ms)
+
+
+Started POST "/api/post/post_qr_code" for 182.250.2.14 at 2015-01-24 02:55:06 +0900
+Processing by ApiController#postQRcode as HTML
+  Parameters: {"userhash"=>"j1fw8vg9z57mr4c3biyohulk6", "code"=>"5hq4tkcu1snrijg83y9zlebvf"}
+Can't verify CSRF token authenticity
+  [1m[36m (0.2ms)[0m  [1mbegin transaction[0m
+  [1m[35mSQL (1.2ms)[0m  INSERT INTO "qrlogs" ("code", "created_at", "updated_at", "userhash") VALUES (?, ?, ?, ?)  [["code", "5hq4tkcu1snrijg83y9zlebvf"], ["created_at", "2015-01-23 17:55:07.085537"], ["updated_at", "2015-01-23 17:55:07.085537"], ["userhash", "j1fw8vg9z57mr4c3biyohulk6"]]
+  [1m[36m (15.3ms)[0m  [1mcommit transaction[0m
+  [1m[35mQrevent Load (0.3ms)[0m  SELECT  "qrevents".* FROM "qrevents"  WHERE "qrevents"."code" = '5hq4tkcu1snrijg83y9zlebvf' LIMIT 1
+  [1m[36mUser Load (0.3ms)[0m  [1mSELECT  "users".* FROM "users"  WHERE "users"."userhash" = 'j1fw8vg9z57mr4c3biyohulk6' LIMIT 1[0m
+  [1m[35m (0.4ms)[0m  begin transaction
+  [1m[36mSQL (0.5ms)[0m  [1mINSERT INTO "items_users" ("created_at", "updated_at", "user_id") VALUES (?, ?, ?)[0m  [["created_at", "2015-01-23 17:55:07.174537"], ["updated_at", "2015-01-23 17:55:07.174537"], ["user_id", 1]]
+  [1m[35m (4.9ms)[0m  commit transaction
+Completed 200 OK in 128ms (Views: 0.6ms | ActiveRecord: 28.3ms)
+
+
+Started POST "/api/post/post_qr_code" for 182.250.2.14 at 2015-01-24 02:55:10 +0900
+Processing by ApiController#postQRcode as HTML
+  Parameters: {"userhash"=>"j1fw8vg9z57mr4c3biyohulk6", "code"=>"5hq4tkcu1snrijg83y9zlebvf"}
+Can't verify CSRF token authenticity
+  [1m[36m (0.4ms)[0m  [1mbegin transaction[0m
+  [1m[35mSQL (0.6ms)[0m  INSERT INTO "qrlogs" ("code", "created_at", "updated_at", "userhash") VALUES (?, ?, ?, ?)  [["code", "5hq4tkcu1snrijg83y9zlebvf"], ["created_at", "2015-01-23 17:55:10.499884"], ["updated_at", "2015-01-23 17:55:10.499884"], ["userhash", "j1fw8vg9z57mr4c3biyohulk6"]]
+  [1m[36m (7.7ms)[0m  [1mcommit transaction[0m
+  [1m[35mQrevent Load (1.7ms)[0m  SELECT  "qrevents".* FROM "qrevents"  WHERE "qrevents"."code" = '5hq4tkcu1snrijg83y9zlebvf' LIMIT 1
+  [1m[36mUser Load (1.0ms)[0m  [1mSELECT  "users".* FROM "users"  WHERE "users"."userhash" = 'j1fw8vg9z57mr4c3biyohulk6' LIMIT 1[0m
+  [1m[35m (0.7ms)[0m  begin transaction
+  [1m[36mSQL (1.0ms)[0m  [1mINSERT INTO "items_users" ("created_at", "updated_at", "user_id") VALUES (?, ?, ?)[0m  [["created_at", "2015-01-23 17:55:10.535154"], ["updated_at", "2015-01-23 17:55:10.535154"], ["user_id", 1]]
+  [1m[35m (6.9ms)[0m  commit transaction
+Completed 200 OK in 68ms (Views: 1.9ms | ActiveRecord: 20.0ms)
+
+
+Started POST "/api/post/post_qr_code" for 182.250.2.14 at 2015-01-24 02:59:30 +0900
+Processing by ApiController#postQRcode as HTML
+  Parameters: {"userhash"=>"j1fw8vg9z57mr4c3biyohulk6", "code"=>"5hq4tkcu1snrijg83y9zlebvf"}
+Can't verify CSRF token authenticity
+  [1m[36m (0.2ms)[0m  [1mbegin transaction[0m
+  [1m[35mSQL (0.6ms)[0m  INSERT INTO "qrlogs" ("code", "created_at", "updated_at", "userhash") VALUES (?, ?, ?, ?)  [["code", "5hq4tkcu1snrijg83y9zlebvf"], ["created_at", "2015-01-23 17:59:30.373589"], ["updated_at", "2015-01-23 17:59:30.373589"], ["userhash", "j1fw8vg9z57mr4c3biyohulk6"]]
+  [1m[36m (12.0ms)[0m  [1mcommit transaction[0m
+  [1m[35mQrevent Load (0.3ms)[0m  SELECT  "qrevents".* FROM "qrevents"  WHERE "qrevents"."code" = '5hq4tkcu1snrijg83y9zlebvf' LIMIT 1
+  [1m[36mUser Load (0.2ms)[0m  [1mSELECT  "users".* FROM "users"  WHERE "users"."userhash" = 'j1fw8vg9z57mr4c3biyohulk6' LIMIT 1[0m
+  [1m[35m (0.3ms)[0m  begin transaction
+  [1m[36mSQL (0.6ms)[0m  [1mINSERT INTO "items_users" ("created_at", "updated_at", "user_id") VALUES (?, ?, ?)[0m  [["created_at", "2015-01-23 17:59:30.439755"], ["updated_at", "2015-01-23 17:59:30.439755"], ["user_id", 1]]
+  [1m[35m (6.6ms)[0m  commit transaction
+Completed 200 OK in 99ms (Views: 0.7ms | ActiveRecord: 24.7ms)
+
+
+Started POST "/api/post/post_qr_code" for 182.250.2.14 at 2015-01-24 02:59:32 +0900
+Processing by ApiController#postQRcode as HTML
+  Parameters: {"userhash"=>"j1fw8vg9z57mr4c3biyohulk6", "code"=>"5hq4tkcu1snrijg83y9zlebvf"}
+Can't verify CSRF token authenticity
+  [1m[36m (0.2ms)[0m  [1mbegin transaction[0m
+  [1m[35mSQL (0.2ms)[0m  INSERT INTO "qrlogs" ("code", "created_at", "updated_at", "userhash") VALUES (?, ?, ?, ?)  [["code", "5hq4tkcu1snrijg83y9zlebvf"], ["created_at", "2015-01-23 17:59:32.306466"], ["updated_at", "2015-01-23 17:59:32.306466"], ["userhash", "j1fw8vg9z57mr4c3biyohulk6"]]
+  [1m[36m (22.6ms)[0m  [1mcommit transaction[0m
+  [1m[35mQrevent Load (0.3ms)[0m  SELECT  "qrevents".* FROM "qrevents"  WHERE "qrevents"."code" = '5hq4tkcu1snrijg83y9zlebvf' LIMIT 1
+  [1m[36mUser Load (0.2ms)[0m  [1mSELECT  "users".* FROM "users"  WHERE "users"."userhash" = 'j1fw8vg9z57mr4c3biyohulk6' LIMIT 1[0m
+  [1m[35m (0.1ms)[0m  begin transaction
+  [1m[36mSQL (0.3ms)[0m  [1mINSERT INTO "items_users" ("created_at", "updated_at", "user_id") VALUES (?, ?, ?)[0m  [["created_at", "2015-01-23 17:59:32.336268"], ["updated_at", "2015-01-23 17:59:32.336268"], ["user_id", 1]]
+  [1m[35m (2.6ms)[0m  commit transaction
+Completed 200 OK in 37ms (Views: 0.3ms | ActiveRecord: 26.5ms)
+
+
+Started POST "/api/post/post_qr_code" for 182.250.2.14 at 2015-01-24 03:00:50 +0900
+Processing by ApiController#postQRcode as HTML
+  Parameters: {"userhash"=>"j1fw8vg9z57mr4c3biyohulk6", "code"=>"5hq4tkcu1snrijg83y9zlebvf"}
+Can't verify CSRF token authenticity
+  [1m[36m (0.2ms)[0m  [1mbegin transaction[0m
+  [1m[35mSQL (0.7ms)[0m  INSERT INTO "qrlogs" ("code", "created_at", "updated_at", "userhash") VALUES (?, ?, ?, ?)  [["code", "5hq4tkcu1snrijg83y9zlebvf"], ["created_at", "2015-01-23 18:00:50.659420"], ["updated_at", "2015-01-23 18:00:50.659420"], ["userhash", "j1fw8vg9z57mr4c3biyohulk6"]]
+  [1m[36m (13.3ms)[0m  [1mcommit transaction[0m
+  [1m[35mQrevent Load (0.3ms)[0m  SELECT  "qrevents".* FROM "qrevents"  WHERE "qrevents"."code" = '5hq4tkcu1snrijg83y9zlebvf' LIMIT 1
+  [1m[36mUser Load (0.3ms)[0m  [1mSELECT  "users".* FROM "users"  WHERE "users"."userhash" = 'j1fw8vg9z57mr4c3biyohulk6' LIMIT 1[0m
+  [1m[35m (0.2ms)[0m  begin transaction
+  [1m[36mSQL (0.7ms)[0m  [1mINSERT INTO "items_users" ("created_at", "item_id", "updated_at", "user_id") VALUES (?, ?, ?, ?)[0m  [["created_at", "2015-01-23 18:00:50.726323"], ["item_id", 1], ["updated_at", "2015-01-23 18:00:50.726323"], ["user_id", 1]]
+  [1m[35m (5.3ms)[0m  commit transaction
+Completed 200 OK in 91ms (Views: 0.7ms | ActiveRecord: 25.9ms)
