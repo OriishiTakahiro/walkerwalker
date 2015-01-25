@@ -86,7 +86,7 @@ class ApiController < ApplicationController
 	def postLocation
 		Gpslog.new(:userhash => params[:userhash],:longitude => params[:longitude].to_f,:latitude => params[:latitude].to_f).save
 
-		threshold = 1.1
+		threshold = 0.1
 		response = Hash.new
 		myuser = User.find_by_userhash(params[:userhash])
 		target_quest = Gpsquest.find(params[:id].to_i)

@@ -21,6 +21,12 @@ class UsersController < ApplicationController
   def edit
   end
 
+ 	# Get /
+	def preview
+		@user = User.where(:name => 'JohnSmith' , :pass => 'testpass').first
+		render :haml => 'preview.html.haml'
+	end
+
   # POST /users
   # POST /users.json
   def create

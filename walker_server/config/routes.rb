@@ -27,11 +27,9 @@ Rails.application.routes.draw do
 	post 'api/post/post_step' => 'api#addStep'
 	post 'api/post/post_location' => 'api#postLocation'
 	post 'api/post/post_qr_code' => 'api#postQRcode'
-
-	#for administrator
-	post 'api/admin/new_lotrate' => 'api#newLotRate'
-	post 'api/admin/new_gpsquest' => 'api#newGpsQuest'
-	post 'api/admin/new_qrevent' => 'api#newQRevent'
+	
+	#for web browther
+	get 'preview' => 'users#preview'
 
   # The priority is based upon order of creation: first created -> highest priority.
   # See how all your routes lay out with "rake routes".
