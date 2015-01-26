@@ -13,18 +13,22 @@
   = mystep.stock_step
   %br
   %h3
-    未受信アイテム
+    未受信アイテム(総数
+    =got_item_list.length
+    個)
 
   %br
   %table{:border => '1'}
     %thead
       %tr
+        %th No.
         %th アイテム名
         %th 分類
         %th アイテム説明
         %th 入手日時
       - myrewards.each_with_index do |reward,index|
         %tr
+          %td= index+1
           %td= reward.name
           %td= reward.classification
           %td= reward.description

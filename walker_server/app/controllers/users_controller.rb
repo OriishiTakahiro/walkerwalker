@@ -23,7 +23,7 @@ class UsersController < ApplicationController
 
  	# Get /
 	def preview
-		@user = User.where(:name => 'JohnSmith' , :pass => 'testpass').first
+		@user = User.find(1)
 		render :haml => 'preview.html.haml'
 	end
 
