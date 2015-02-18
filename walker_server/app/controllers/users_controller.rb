@@ -24,6 +24,7 @@ class UsersController < ApplicationController
  	# Get /
 	def preview
 		@user = User.find(1)
+		@questlist = Gpsquest.all
 		render :haml => 'preview.html.haml'
 	end
 

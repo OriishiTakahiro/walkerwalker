@@ -40,3 +40,7 @@ gem 'spring',        group: :development
 
 gem 'therubyracer'
 gem 'haml-rails'
+
+gem 'autoprefixer-rails'
+gem 'bootstrap-sass'
+gem 'bootswatch-rails'

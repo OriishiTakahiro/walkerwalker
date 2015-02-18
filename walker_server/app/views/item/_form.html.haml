@@ -1,0 +1,18 @@
+= form_for @item, html: { class: "form form-horizontal item" } do |f|
+  .form-group
+    = f.label :name, class: 'control-label'
+    .controls
+      = f.text_field :name, class: 'form-control', required: true
+    = error_span(@item[:name])
+  .form-group
+    = f.label :classification, class: 'control-label'
+    .controls
+      = f.text_field :classification, class: 'form-control', required: true
+    = error_span(@item[:classification])
+  .form-group
+    = f.label :description, class: 'control-label'
+    .controls
+      = f.text_field :description, class: 'form-control', required: true
+    = error_span(@item[:description])
+  = f.submit nil,class: 'btn btn-primary'
+  = link_to t('.cancel', :default => t("helpers.links.cancel")), items_path, :class => 'btn btn-default'

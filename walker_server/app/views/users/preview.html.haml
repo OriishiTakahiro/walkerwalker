@@ -6,30 +6,52 @@
   - myrewards = Array.new
   - got_item_list = ItemsUsers.where(:user_id => @user.id)
   - got_item_list.each{ |x| myrewards.push(Item.find(x.item_id))}
-  累計歩数:
-  = mystep.total_step
   %br
-  未送信歩数:
-  = mystep.stock_step
+  %h4 歩数情報
+  %div{:class => 'panel panel-default'}
+    %div{:class => 'panel-body'}
+      %h3
+        %ul
+          %li= '累計歩数　  ' + mystep.total_step.to_s + '歩'
+          %br
+          %li= '未送信歩数  ' + mystep.stock_step.to_s + '歩'
   %br
-  %h3
+  %h4
     未受信アイテム(総数
     =got_item_list.length
     個)
-
-  %br
-  %table{:border => '1'}
+  %table{:class => 'table table-striped table-hover'}
     %thead
-      %tr
+      %tr{:class => 'info'}
         %th No.
         %th アイテム名
         %th 分類
         %th アイテム説明
         %th 入手日時
       - myrewards.each_with_index do |reward,index|
-        %tr
+        %tr{:class => 'active'}
           %td= index+1
           %td= reward.name
           %td= reward.classification
           %td= reward.description
           %td= got_item_list[index].created_at.in_time_zone('Tokyo')
+  %br
+  %h4 
+    現在受注可能なGPSクエスト(全
+    = @questlist.length
+    件)
+  %table{:class => 'table table-striped table-hover'}
+    %thead
+      %tr{:class => 'info'}
+        %th No.
+        %th 目的地
+        %th 経度
+        %th 緯度
+        %th リワード
+      - @questlist.each_with_index do |quest,index|
+        %tr{:class => 'active'}
+          %td= index+1
+          %td= quest.destination
+          %td= quest.longitude
+          %td= quest.latitude
+          %td= Item.find(quest.reward).name
