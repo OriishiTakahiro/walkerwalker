@@ -111,11 +111,11 @@ class ApiController < ApplicationController
 	def postQRcode
 		Qrlog.new(:userhash => params[:userhash],:code => params[:code]).save()
 		response = Hash.new()
-		event = Qrevent.find_by_code(params[:code]).reward
-		user = User.find_by_userhash(params[:userhash]).id
+		event = Qrevent.find_by_code(params[:code])
+		user = User.find_by_userhash(params[:userhash])
 		if(!event || !user)
 			response = {:result => :failed}
-		elsif(ItemsUsers.new(:item_id => event, :user_id => user).save)
+		elsif(ItemsUsers.new(:item_id => event.reward, :user_id => user.id).save)
 			response = {:result => :successed}
 		else
 			response = {:result => :failed}

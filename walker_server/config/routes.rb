@@ -26,7 +26,7 @@ Rails.application.routes.draw do
 	post 'api/post/register_user' => 'api#registerUser'
 	post 'api/post/post_step' => 'api#addStep'
 	post 'api/post/post_location' => 'api#postLocation'
-	post 'api/post/post_qr_code' => 'api#postQRcode'
+	post 'api/post/post_qrcode' => 'api#postQRcode'
 	
 	#for web browther
 	get 'preview' => 'users#preview'
