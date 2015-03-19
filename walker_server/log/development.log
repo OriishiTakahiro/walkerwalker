@@ -26268,3 +26268,11 @@ Processing by GameApiController#getItemEntity as HTML
   [1m[35mUser Load (0.1ms)[0m  SELECT  "users".* FROM "users"  WHERE "users"."userhash" = 'u21mtne3iyzrdjoghp569kbv7' LIMIT 1
   [1m[36mItem Load (0.2ms)[0m  [1mSELECT "items".* FROM "items"[0m
 Completed 200 OK in 16ms (Views: 0.3ms | ActiveRecord: 1.5ms)
+
+
+Started GET "/walker/game/items/get_items_entity?userhash=u21mtne3iyzrdjoghp569kbv7" for 10.211.55.2 at 2015-03-20 02:35:46 +0900
+Processing by GameApiController#getItemEntity as HTML
+  Parameters: {"userhash"=>"u21mtne3iyzrdjoghp569kbv7"}
+  [1m[35mUser Load (0.1ms)[0m  SELECT  "users".* FROM "users"  WHERE "users"."userhash" = 'u21mtne3iyzrdjoghp569kbv7' LIMIT 1
+  [1m[36mItem Load (0.2ms)[0m  [1mSELECT "items".* FROM "items"[0m
+Completed 200 OK in 14ms (Views: 0.2ms | ActiveRecord: 1.0ms)
