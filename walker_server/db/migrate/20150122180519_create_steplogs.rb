@@ -1,8 +1,8 @@
 class CreateSteplogs < ActiveRecord::Migration
   def change
     create_table :steplogs do |t|
-      t.string :userhash
-      t.integer :step
+      t.string :userhash, :null => false
+      t.integer :step, :null => false
 
       t.timestamps
     end

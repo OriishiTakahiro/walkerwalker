@@ -14,25 +14,28 @@
 ActiveRecord::Schema.define(version: 20150123164947) do
 
   create_table "gpslogs", force: true do |t|
-    t.string   "userhash"
-    t.float    "longitude"
-    t.float    "latitude"
+    t.string   "userhash",                           null: false
+    t.decimal  "latitude",   precision: 9, scale: 6, null: false
+    t.decimal  "longitude",  precision: 9, scale: 6, null: false
     t.datetime "created_at"
     t.datetime "updated_at"
   end
 
   create_table "gpsquests", force: true do |t|
-    t.string   "destination"
-    t.float    "longitude"
-    t.float    "latitude"
-    t.integer  "reward"
+    t.string   "name",                                null: false
+    t.string   "description"
+    t.string   "destination",                         null: false
+    t.decimal  "latitude",    precision: 9, scale: 6, null: false
+    t.decimal  "longitude",   precision: 9, scale: 6, null: false
+    t.string   "reward",                              null: false
     t.datetime "created_at"
     t.datetime "updated_at"
   end
 
   create_table "items", force: true do |t|
-    t.string   "name"
-    t.string   "classification"
+    t.string   "name",            null: false
+    t.integer  "effective_term",  null: false
+    t.integer  "effective_value", null: false
     t.string   "description"
     t.datetime "created_at"
     t.datetime "updated_at"
@@ -46,44 +49,44 @@ ActiveRecord::Schema.define(version: 20150123164947) do
   end
 
   create_table "qrevents", force: true do |t|
-    t.string   "code"
-    t.integer  "reward"
+    t.string   "code",       null: false
+    t.string   "reward",     null: false
     t.datetime "created_at"
     t.datetime "updated_at"
   end
 
   create_table "qrlogs", force: true do |t|
-    t.string   "userhash"
-    t.string   "code"
+    t.string   "userhash",   null: false
+    t.string   "code",       null: false
     t.datetime "created_at"
     t.datetime "updated_at"
   end
 
   create_table "step_users", force: true do |t|
-    t.integer  "step_id"
-    t.integer  "user_id"
+    t.integer  "step_id",    null: false
+    t.integer  "user_id",    null: false
     t.datetime "created_at"
     t.datetime "updated_at"
   end
 
   create_table "steplogs", force: true do |t|
-    t.string   "userhash"
-    t.integer  "step"
+    t.string   "userhash",   null: false
+    t.integer  "step",       null: false
     t.datetime "created_at"
     t.datetime "updated_at"
   end
 
   create_table "steps", force: true do |t|
-    t.integer  "stock_step"
-    t.integer  "total_step"
+    t.integer  "stock_step", default: 0, null: false
+    t.integer  "total_step", default: 0, null: false
     t.datetime "created_at"
     t.datetime "updated_at"
   end
 
   create_table "users", force: true do |t|
-    t.string   "name"
-    t.string   "pass"
-    t.string   "userhash"
+    t.string   "name",       null: false
+    t.string   "pass",       null: false
+    t.string   "userhash",   null: false
     t.datetime "created_at"
     t.datetime "updated_at"
   end

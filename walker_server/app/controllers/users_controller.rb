@@ -32,6 +32,11 @@ class UsersController < ApplicationController
   # POST /users.json
   def create
     @user = User.new(user_params)
+		@user.hash = nil
+		while !@user.userhash do
+			tmp = ((1..9).to_a + ('a'..'z').to_a).sample(25).join
+			@user.userhash = tmp if User.where(:userhash => tmp).empty?
+		end
     respond_to do |format|
       if @user.save
 				mystep = Step.new(:total_step => 0,:stock_step => 0)
