@@ -4,7 +4,8 @@
   %thead
     %tr
       %th Name
-      %th Classification
+      %th Effective term
+      %th Effective value
       %th Description
       %th
       %th
@@ -14,7 +15,8 @@
     - @items.each do |item|
       %tr
         %td= item.name
-        %td= item.classification
+        %td= item.effective_term
+        %td= item.effective_value
         %td= item.description
         %td= link_to 'Show', item
         %td= link_to 'Edit', edit_item_path(item)

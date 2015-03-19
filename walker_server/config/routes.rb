@@ -1,5 +1,7 @@
 Rails.application.routes.draw do
 
+  resources :items
+
   resources :qrevents
 
   resources :items_users
@@ -12,24 +14,12 @@ Rails.application.routes.draw do
 
   resources :gpslogs
 
-  resources :items
-
   resources :users
 
 	#for android client
-	get 'api/test' => 'api#test_api'
-	get 'api/list' => 'api#get_list'
-	get 'api/get/get_userhash' => 'api#getUserhash'
-	get 'api/get/get_step' => 'api#getStep'
-	get 'api/get/get_gps_questlist' => 'api#getGpsQuestList'
-
-	post 'api/post/register_user' => 'api#registerUser'
-	post 'api/post/post_step' => 'api#addStep'
-	post 'api/post/post_location' => 'api#postLocation'
-	post 'api/post/post_qrcode' => 'api#postQRcode'
 	
 	#for web browther
-	get 'preview' => 'users#preview'
+	get '/walker/game/items/get_items_entity' => 'game_api#getItemEntity'
 
   # The priority is based upon order of creation: first created -> highest priority.
   # See how all your routes lay out with "rake routes".

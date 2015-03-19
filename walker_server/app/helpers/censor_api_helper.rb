@@ -1,0 +1,2 @@
+module CensorApiHelper
+end

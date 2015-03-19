@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20150123164947) do
+ActiveRecord::Schema.define(version: 20150319165621) do
 
   create_table "gpslogs", force: true do |t|
     t.string   "userhash",                           null: false

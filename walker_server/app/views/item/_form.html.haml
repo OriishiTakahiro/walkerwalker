@@ -5,14 +5,25 @@
       = f.text_field :name, class: 'form-control', required: true
     = error_span(@item[:name])
   .form-group
-    = f.label :classification, class: 'control-label'
+    = f.label :effective_term, class: 'control-label'
     .controls
-      = f.text_field :classification, class: 'form-control', required: true
-    = error_span(@item[:classification])
+      = f.text_field :effective_term, class: 'form-control', required: true
+    = error_span(@item[:effective_term])
+  .form-group
+    = f.label :effective_value, class: 'control-label'
+    .controls
+      = f.text_field :effective_value, class: 'form-control', required: true
+    = error_span(@item[:effective_value])
   .form-group
     = f.label :description, class: 'control-label'
     .controls
       = f.text_field :description, class: 'form-control', required: true
     = error_span(@item[:description])
+  .form-group
+    = f.label :description, class: 'control-label'
+    .controls
+      = f.text_field :description, class: 'form-control', required: true
+    = error_span(@item[:description])
+
   = f.submit nil,class: 'btn btn-primary'
   = link_to t('.cancel', :default => t("helpers.links.cancel")), items_path, :class => 'btn btn-default'

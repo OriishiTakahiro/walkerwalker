@@ -1,0 +1,2 @@
+module GameApiHelper
+end

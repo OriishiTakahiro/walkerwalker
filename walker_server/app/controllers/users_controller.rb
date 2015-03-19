@@ -32,7 +32,7 @@ class UsersController < ApplicationController
   # POST /users.json
   def create
     @user = User.new(user_params)
-		@user.hash = nil
+		@user.userhash = nil
 		while !@user.userhash do
 			tmp = ((1..9).to_a + ('a'..'z').to_a).sample(25).join
 			@user.userhash = tmp if User.where(:userhash => tmp).empty?

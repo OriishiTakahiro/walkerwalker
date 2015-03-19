@@ -1,0 +1,2 @@
+class CensorApiController < ApplicationController
+end

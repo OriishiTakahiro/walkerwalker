@@ -1,62 +1,11 @@
 #coding:utf-8
 class ApiController < ApplicationController
 
-	def get_list
-		render :json => User.all
-	end
-
 	#under for connect by android 
-	
-	def registerUser
-		response = Hash.new
-		
-		if params[:name] != nil and params[:pass] != nil
-			unless User.where(:name).empty?
-				response = {:result => :failed,:message => "specified name is already existing"}
-				render :json => response
-				return nil
-			end
-
-			user = User.new
-			user.name = params[:name]
-			user.pass = params[:pass]
-			while user.userhash == nil do
-				tmp = ((1..9).to_a + ('a'..'z').to_a).sample(25).join
-				user.userhash = tmp if User.where(:userhash => tmp).empty?
-			end
-
-			mystep = Step.new
-			mystep.save
-			user.step_id = mystep.id
-
-			user.save
-
-			response = {:result => :successed ,:message =>"registered use name = #{params[:name]}" ,:userhash => user.userhash} 
-
-		else
-			response = {:result => :failed,:message => "lack of information for register new user"}
-		end
-
-		render :json => response
-
-	end
-
-	def getUserhash
-		response = Hash.new
-		users = User.where(:name => params[:name],:pass => params[:pass])
-		if users.empty?
-			response[:result] = "failed" 
-		else
-			response[:result] = "success"
-			response[:userhash] = users.first.userhash 
-		end
-
-		render :json => response
-	end
 
 	def addStep
 		Steplog.new(:userhash => params[:userhash],:step => params[:step]).save
-		mystep = Step.find(StepUser.find_by_user_id(User.find_by_userhash(params[:userhash]).id).step_id)
+		mystep = Step.find(StepUser.find_by(:user_id => User.find_by(:userhash => params[:userhash]).id).step_id)
 		response = Hash.new
 		if mystep
 			addition = params[:step].to_i
