@@ -19,34 +19,33 @@ public class WrapAccesor {
 	public static class PostStep extends PostHttp {
 		private Activity activity;
 		public PostStep(ArrayList<String> columns,Activity receiver) {
-			super(scheme,authority,"api/post/post_step",columns);
+			super(scheme,authority,"/walker/sensor/steps/post_step",columns);
 			activity = receiver;
 		}
 		@Override
 		protected void onPostExecute(Response response){
 			HashMap<String,String> result_hash = JsonParser.parseJson(response.getMessage());
-			Toast.makeText(activity, result_hash.get("result") + ":" + result_hash.get("message"), Toast.LENGTH_LONG).show();
-			
+			Toast.makeText(activity, result_hash.get("result"), Toast.LENGTH_LONG).show();
 		}
 	}
 	
 	public static class PostLocation extends PostHttp {
 		private TextView result_view;
 		public PostLocation(ArrayList<String> columns,TextView component) {
-			super(scheme,authority,"api/post/post_location",columns);
+			super(scheme,authority,"/walker/game/items/get_items_entity",columns);
 			result_view = component;
 		}
 		@Override
 		protected void onPostExecute(Response response){
 			HashMap<String,String> result_hash = JsonParser.parseJson(response.getMessage());
- 			result_view.setText(result_hash.get("result") + result_hash.get("message"));
+ 			result_view.setText(result_hash.get("result"));
 		}
 	}
 	
 	public static class PostQRcode extends PostHttp {
 		private Activity activity;
 		public PostQRcode(ArrayList<String> columns,Activity receiver) {
-			super(scheme,authority,"api/post/post_qrcode",columns);
+			super(scheme,authority,"/walker/sensor/qrcodes/post_qrcode",columns);
 			activity = receiver;
 		}
 		@Override
