@@ -26,12 +26,18 @@ class SensorApiController < ApplicationController
 		target_quest = Gpsquest.where(:longitude => ((params[:longitude].to_f-lon_threshold)..(params[:longitude].to_f+lon_threshold)),:latitude => ((params[:latitude].to_f-lati_threshold)..(params[:latitude].to_f+lati_threshold))).first
 
 		if(target_quest and myuser)
-
-			new_item = ItemsUsers.new
-			new_item.user_id = myuser.id
-			new_item.item_id = target_quest.reward
-			new_item.save
-
+			target_quest.reward.split(',').each { |reward|
+				unless item = ItemsUsers.find_by(:user_id => myuser.id, :item_id => reward.to_i)
+					item = ItemsUsers.new
+					item.user_id = myuser.id
+					item.item_id = reward.to_i
+					item.amount = 0
+					item.save
+				else
+					item.amount = item.amount+1
+				end
+				item.save
+			}	
 			response = {:result => :successed}
 		else
 			response = {:result => :failed}

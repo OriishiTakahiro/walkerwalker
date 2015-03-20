@@ -19,7 +19,7 @@ Rails.application.routes.draw do
 	#for sensor app
 	post '/walker/sensor/steps/post_step' => 'sensor_api#postStep'
 	post '/walker/sensor/gpsquests/post_location' => 'sensor_api#postLocation'
-	post '/walker/sensor/qrcodes/post_location' => 'sensor_api#postQRcode'
+	post '/walker/sensor/qrcodes/post_qrcode' => 'sensor_api#postQRcode'
 
 	#for unity game
 	get '/walker/game/items/get_items_entity' => 'game_api#getItemEntity'

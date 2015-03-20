@@ -27389,3 +27389,63 @@ Processing by GameApiController#getItemEntity as HTML
   [1m[35mItemsUsers Load (0.3ms)[0m  SELECT  "items_users".* FROM "items_users"  WHERE "items_users"."user_id" = 1 AND "items_users"."item_id" = 1 LIMIT 1
   [1m[36mItemsUsers Load (0.1ms)[0m  [1mSELECT  "items_users".* FROM "items_users"  WHERE "items_users"."user_id" = 1 AND "items_users"."item_id" = 2 LIMIT 1[0m
 Completed 200 OK in 17ms (Views: 0.6ms | ActiveRecord: 2.0ms)
+
+
+Started GET "/assets/jquery.js?body=1" for 220.217.130.42 at 2015-03-21 02:13:41 +0900
+  [1m[36mActiveRecord::SchemaMigration Load (1.1ms)[0m  [1mSELECT "schema_migrations".* FROM "schema_migrations"[0m
+
+
+Started GET "/assets/jquery_ujs.js?body=1" for 220.217.130.42 at 2015-03-21 02:15:00 +0900
+
+
+Started GET "/assets/turbolinks.js?body=1" for 220.217.130.42 at 2015-03-21 02:15:00 +0900
+
+
+Started GET "/assets/application.css?body=1" for 220.217.130.42 at 2015-03-21 02:15:00 +0900
+  [1m[36mActiveRecord::SchemaMigration Load (0.8ms)[0m  [1mSELECT "schema_migrations".* FROM "schema_migrations"[0m
+
+
+Started GET "/assets/jquery_ujs.js?body=1" for 220.217.130.42 at 2015-03-21 02:39:17 +0900
+  [1m[36mActiveRecord::SchemaMigration Load (0.3ms)[0m  [1mSELECT "schema_migrations".* FROM "schema_migrations"[0m
+
+
+Started GET "/assets/jquery.js?body=1" for 220.217.130.42 at 2015-03-21 02:41:00 +0900
+
+
+Started GET "/assets/jquery_ujs.js?body=1" for 220.217.130.42 at 2015-03-21 02:41:00 +0900
+  [1m[36mActiveRecord::SchemaMigration Load (0.4ms)[0m  [1mSELECT "schema_migrations".* FROM "schema_migrations"[0m
+
+
+Started GET "/assets/application.js?body=1" for 220.217.130.42 at 2015-03-21 02:41:11 +0900
+
+
+Started GET "/assets/application.css?body=1" for 220.217.130.42 at 2015-03-21 02:41:11 +0900
+
+
+Started GET "/assets/jquery.js?body=1" for 220.217.130.42 at 2015-03-21 02:41:11 +0900
+  [1m[36mActiveRecord::SchemaMigration Load (1.1ms)[0m  [1mSELECT "schema_migrations".* FROM "schema_migrations"[0m
+
+
+Started GET "/assets/turbolinks.js?body=1" for 220.217.130.42 at 2015-03-21 02:41:12 +0900
+
+
+Started GET "/assets/application.js?body=1" for 220.217.130.42 at 2015-03-21 02:41:12 +0900
+
+
+Started GET "/assets/jquery_ujs.js?body=1" for 220.217.130.42 at 2015-03-21 02:41:12 +0900
+
+
+Started GET "/assets/application.css?body=1" for 220.217.130.42 at 2015-03-21 02:41:12 +0900
+  [1m[36mActiveRecord::SchemaMigration Load (0.3ms)[0m  [1mSELECT "schema_migrations".* FROM "schema_migrations"[0m
+
+
+Started GET "/assets/jquery.js?body=1" for 220.217.130.42 at 2015-03-21 02:41:49 +0900
+
+
+Started GET "/assets/application.css?body=1" for 220.217.130.42 at 2015-03-21 02:41:49 +0900
+
+
+Started GET "/assets/application.js?body=1" for 220.217.130.42 at 2015-03-21 02:41:49 +0900
+
+
+Started GET "/assets/jquery_ujs.js?body=1" for 220.217.130.42 at 2015-03-21 02:41:49 +0900
