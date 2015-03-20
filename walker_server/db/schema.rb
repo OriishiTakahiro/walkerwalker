@@ -42,8 +42,9 @@ ActiveRecord::Schema.define(version: 20150319165621) do
   end
 
   create_table "items_users", force: true do |t|
-    t.integer  "user_id"
-    t.integer  "item_id"
+    t.integer  "user_id",    null: false
+    t.integer  "item_id",    null: false
+    t.integer  "amount",     null: false
     t.datetime "created_at"
     t.datetime "updated_at"
   end
@@ -84,9 +85,10 @@ ActiveRecord::Schema.define(version: 20150319165621) do
   end
 
   create_table "users", force: true do |t|
-    t.string   "name",       null: false
-    t.string   "pass",       null: false
-    t.string   "userhash",   null: false
+    t.string   "name",                      null: false
+    t.string   "pass",                      null: false
+    t.string   "userhash",                  null: false
+    t.boolean  "validities", default: true, null: false
     t.datetime "created_at"
     t.datetime "updated_at"
   end

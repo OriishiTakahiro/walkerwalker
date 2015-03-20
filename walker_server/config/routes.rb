@@ -18,8 +18,9 @@ Rails.application.routes.draw do
 
 	#for android client
 	
-	#for web browther
+	#for unity
 	get '/walker/game/items/get_items_entity' => 'game_api#getItemEntity'
+	get '/walker/game/steps/get_step' => 'game_api#getStep'
 
   # The priority is based upon order of creation: first created -> highest priority.
   # See how all your routes lay out with "rake routes".
