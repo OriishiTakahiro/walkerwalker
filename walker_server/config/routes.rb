@@ -16,11 +16,16 @@ Rails.application.routes.draw do
 
   resources :users
 
-	#for android client
-	
-	#for unity
+	#for sensor app
+	post '/walker/sensor/steps/post_step' => 'sensor_api#postStep'
+	post '/walker/sensor/gpsquests/post_location' => 'sensor_api#postLocation'
+	post '/walker/sensor/qrcodes/post_location' => 'sensor_api#postQRcode'
+
+	#for unity game
 	get '/walker/game/items/get_items_entity' => 'game_api#getItemEntity'
 	get '/walker/game/steps/get_step' => 'game_api#getStep'
+
+	#for both app
 
   # The priority is based upon order of creation: first created -> highest priority.
   # See how all your routes lay out with "rake routes".

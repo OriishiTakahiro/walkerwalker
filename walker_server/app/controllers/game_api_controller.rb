@@ -23,10 +23,8 @@ class GameApiController < ApplicationController
 	end
 
 	# get from unity game
-	def postStep
-		
-	end
 
+	# utility
 	def authoriseUser
 		@response = Array.new
 		unless @user = User.find_by(:userhash => params[:userhash], :validities => true)

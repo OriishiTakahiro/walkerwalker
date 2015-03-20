@@ -1,4 +1,18 @@
-class CensorApiController < ApplicationController
+class SensorApiController < ApplicationController
+
+	def postStep
+		Steplog.new(:userhash => params[:userhash],:step => params[:step]).save
+		mystep = Step.find(StepUser.find_by(:user_id => User.find_by(:userhash => params[:userhash]).id).step_id)
+		response = Hash.new
+		if mystep
+			addition = params[:step].to_i
+			mystep.update(:stock_step => mystep.stock_step + addition ,:total_step => mystep.total_step + addition)
+			response = {:result => :successed,:total_step => mystep.total_step.to_s,:stock_step => mystep.stock_step.to_s}
+		else
+			response = {:result => :failed}
+		end
+		render :json => response
+	end
 
 	def postLocation
 		Gpslog.new(:userhash => params[:userhash],:longitude => params[:longitude].to_f,:latitude => params[:latitude].to_f).save
