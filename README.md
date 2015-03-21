@@ -40,3 +40,7 @@
 	- URL : /walker/game/steps/post_step
 	- param : userhash,step
 	- response : ```{result,stock_step}```
+- アイテム保有情報保存
+ - URL : /walker/game/items/post_items  
+ - param : ```[{id:amount},{id:amount}...]```
+ - response : result

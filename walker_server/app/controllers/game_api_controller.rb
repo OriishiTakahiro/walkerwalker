@@ -38,6 +38,12 @@ class GameApiController < ApplicationController
 
 	def postItems
 		unless @response[0]
+			Item.all.each { |item|
+				hasitem = ItemsUsers.new(:item_id => item.id, :user_id => @user.id) unless hasitem = ItemsUsers.find_by(:item_id => item.id, :user_id => @user.id)
+				hasitem.amount = params[item.id.to_s].to_i
+				hasitem.save
+			}
+			@response.push :result => :succeed
 		end
 		render :json => @response
 	end
