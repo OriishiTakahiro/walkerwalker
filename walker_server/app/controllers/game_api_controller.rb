@@ -17,14 +17,30 @@ class GameApiController < ApplicationController
 
 	def getStep
 		unless @response[0]
-			if mystep = Step.find_by(:id => @user.id)
-				@response = {:result => :successed, :step => mystep.stock_step, :total_step => mystep.total_step}
+			if mystep = Step.find(StepUser.find_by(:user_id => @user.id).step_id)
+				@response = {:result => :succeed, :step => mystep.stock_step, :total_step => mystep.total_step}
 			end
 		end
 		render :json => @response
 	end
 
 	# get from unity game
+	def postStep
+		unless @response[0]
+			if mystep = Step.find(StepUser.find_by(:user_id => @user.id).step_id)
+				mystep.stock_step = params[:step]
+				mystep.save
+				@response = {:result => :succeedi, :step => mystep.stock_step}
+			end
+			render :json => @response
+		end
+	end
+
+	def postItems
+		unless @response[0]
+		end
+		render :json => @response
+	end
 
 	# utility
 	def authoriseUser

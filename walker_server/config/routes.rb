@@ -24,6 +24,8 @@ Rails.application.routes.draw do
 	#for unity game
 	get '/walker/game/items/get_items_entity' => 'game_api#getItemEntity'
 	get '/walker/game/steps/get_step' => 'game_api#getStep'
+	get '/walker/game/steps/post_step' => 'game_api#postStep'
+	get '/walker/game/items/post_items' => 'game_api#postItems'
 
 	#for both app
 
