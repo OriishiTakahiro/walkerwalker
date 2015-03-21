@@ -48,11 +48,13 @@ class SensorApiController < ApplicationController
 	def postQRcode
 		Qrlog.new(:userhash => params[:userhash],:code => params[:code]).save()
 		response = Hash.new()
-		event = Qrevent.find_by_code(params[:code])
-		user = User.find_by_userhash(params[:userhash])
+		event = Qrevent.find_by(:code => params[:code])
+		user = User.find_by(:userhash => params[:userhash])
 		if(!event || !user)
 			response = {:result => :failed}
-		elsif(ItemsUsers.new(:item_id => event.reward, :user_id => user.id).save)
+		elsif(hasitem = ItemsUsers.find_or_create_by(:item_id => event.reward, :user_id => user.id) {|iu| iu.amount = 0})
+			hasitem.amount+=1
+			hasitem.save
 			response = {:result => :successed}
 		else
 			response = {:result => :failed}
