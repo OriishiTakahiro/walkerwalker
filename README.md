@@ -1,6 +1,30 @@
-#リポジトリの構成  
-リポジトリにはそれぞれ  
-1.walker_server(サーバ)  
-2.walker_game(ゲームアプリ)  
-3.walker_measure(計測アプリ)  
-のそれぞれのディレクトリを用意してその中で作業をしてください.  
+#このリポジトリについて  
+=====
+##リポジトリの中身  
+---
+>*README.md  
+>	リポジトリについて  
+>*SensorMain  
+>	センサーアプリ  
+>*walker_server
+>	サーバーアプリ  
+=====
+##Apiのルーティング  
+---
+>###センサアプリ向け  
+>>*歩数投稿  
+>>>*/walker/sensor/steps/post_step      
+>>>*userhash, step  
+>>*GPSクエスト報告  
+>>>*/walker/sensor/gpsquests/post_location  
+>>>*userhash, latitude, longitude  
+>>*QRコード投稿  
+>>>*/walker/sensor/qrcodes/post_qrcode
+>>>*userhash, code
+>###ゲームアプリ向け  
+>>*アイテムデータ取得  
+>>>*/walker/game/items/get_items_entity  
+>>>*userhash
+>>*CP取得
+>>>*/walker/game/steps/get_step
+>>>*userhash
