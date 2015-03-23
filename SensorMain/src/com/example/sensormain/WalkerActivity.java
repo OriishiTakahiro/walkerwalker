@@ -131,3 +131,4 @@ public class WalkerActivity extends Activity implements OnClickListener {
     	}
     }
 }
+	

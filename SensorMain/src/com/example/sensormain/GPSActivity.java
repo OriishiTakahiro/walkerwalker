@@ -12,11 +12,16 @@ import android.location.Location;
 import android.location.LocationListener;
 import android.location.LocationManager;
 import android.os.Bundle;
+import android.util.Log;
 import android.view.View;
 import android.view.View.OnClickListener;
+import android.widget.LinearLayout;
 import android.widget.TextView;
 
 public class GPSActivity extends Activity implements LocationListener,OnClickListener {
+	
+	private ArrayList<TextView> questlist = null;
+	private boolean is_initialize = true;
 	
 	private double latitude,longitude;
     /** Called when the activity is first created. */
@@ -24,10 +29,12 @@ public class GPSActivity extends Activity implements LocationListener,OnClickLis
     public void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_gps);
-
-     // LocationManagerを取得
+        
+        setQuestList();
+                
+        // LocationManagerを取得
         LocationManager mLocationManager =
-             (LocationManager) getSystemService(Context.LOCATION_SERVICE);
+        (LocationManager) getSystemService(Context.LOCATION_SERVICE);
 
         // Criteriaオブジェクトを生成
         Criteria criteria = new Criteria();
@@ -63,6 +70,14 @@ public class GPSActivity extends Activity implements LocationListener,OnClickLis
         // 経度の表示
         TextView tv_lng = (TextView) findViewById(R.id.Longitude);
         tv_lng.setText("Longitude:"+location.getLongitude());
+        
+        if(is_initialize) {
+        	is_initialize = false;
+        	ArrayList<String>  columns = new ArrayList<String>();
+        	columns.add("userhash");
+        	WrapAccesor.GetGpsquestList listgetter = new WrapAccesor.GetGpsquestList(columns,questlist);
+        	listgetter.execute(UserData.USERHASH);
+        }
 
     }
 
@@ -100,6 +115,14 @@ public class GPSActivity extends Activity implements LocationListener,OnClickLis
 
             	break;
     	}
+    }
+    private void setQuestList() {
+    	questlist = new ArrayList<TextView>();
+        questlist.add((TextView)findViewById(R.id.raw1));
+        questlist.add((TextView)findViewById(R.id.raw2));
+        questlist.add((TextView)findViewById(R.id.raw3));
+        questlist.add((TextView)findViewById(R.id.raw4));
+        questlist.add((TextView)findViewById(R.id.raw5));
     }
     
 }

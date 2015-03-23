@@ -6,14 +6,82 @@
     android:paddingLeft="@dimen/activity_horizontal_margin"
     android:paddingRight="@dimen/activity_horizontal_margin"
     android:paddingTop="@dimen/activity_vertical_margin"
+    android:gravity="center"
+    android:orientation="vertical"
     tools:context="com.example.sensorMain.GPSActivity" >
 
+     <TextView 
+        android:id="@+id/listlabel"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentTop="true"
+        android:layout_alignParentLeft="true"
+        android:textSize="20dp"
+        android:text="付近のクエスト一覧"/>
+
+  	<LinearLayout 
+    	android:id="@+id/list_layout"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_below="@id/listlabel"
+        android:orientation="vertical" 
+        android:layout_weight="1" >
+
+    <TextView
+        android:id="@+id/raw1"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:background="#afeeee"
+        android:textSize="18dp"
+        android:text="-- no quest --\n" />
+    <TextView
+        android:id="@+id/raw2"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:background="#e0ffff"
+        android:textSize="18dp"
+        android:text="-- no quest --\n" />
+    <TextView
+        android:id="@+id/raw3"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:background="#afeeee"
+        android:textSize="18dp"
+        android:text="-- no quest --\n" />
+    <TextView
+        android:id="@+id/raw4"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:background="#e0ffff"
+        android:textSize="18dp"
+        android:text="-- no quest --\n" />
+    <TextView
+        android:id="@+id/raw5"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:background="#afeeee"
+        android:textSize="18dp"
+        android:text="-- no quest --\n" />
+           
+</LinearLayout>
+   
+    <View 
+        android:id="@+id/horizontal_line"
+        android:layout_width="match_parent"
+        android:layout_height="2dp"
+        android:layout_below="@id/list_layout"
+        android:background="#000000"
+        />
+    
     <TextView
         android:id="@+id/disp_result"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:layout_alignParentTop="true"
-        android:text="result"
+        android:layout_alignParentLeft="true"
+        android:layout_below="@id/horizontal_line"
+        android:textSize="16dp"
+        android:layout_weight="1"
+        android:text=""
     />
 
     <TextView
@@ -21,6 +89,8 @@
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:layout_below="@id/disp_result"
+        android:textSize="16dp"
+        android:layout_weight="1"
         android:text="latitude of your location"
     />
 
@@ -29,6 +99,8 @@
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:layout_below="@id/Latitude"
+        android:textSize="16dp"
+        android:layout_weight="1"
         android:text="longitude of your location"
     />
     <Button
@@ -36,7 +108,8 @@
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:layout_below="@id/Longitude"
-        android:text="send"
+        android:layout_weight="1"
+        android:text="目的地到着"
     />
  
 
