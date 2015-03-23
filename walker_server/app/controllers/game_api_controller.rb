@@ -39,7 +39,8 @@ class GameApiController < ApplicationController
 	def postItems
 		unless @response[0]
 			Item.all.each { |item|
-				hasitem = ItemsUsers.new(:item_id => item.id, :user_id => @user.id) unless hasitem = ItemsUsers.find_by(:item_id => item.id, :user_id => @user.id)
+				hasitem = ItemsUsers.find_by(:item_id => item.id, :user_id => @user.id)
+				hasitem = ItemsUsers.new(:item_id => item.id, :user_id => @user.id) unless hasitem
 				hasitem.amount = params[item.id.to_s].to_i
 				hasitem.save
 			}

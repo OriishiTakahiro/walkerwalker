@@ -62,4 +62,12 @@ class SensorApiController < ApplicationController
 		render :json => response
 	end
 
+	def getGpsQuestsList
+		response = Array.new
+		Gpsquest.all.each { |quest|
+			response.push(quest.destination)
+		}
+		render :json => response
+	end
+
 end

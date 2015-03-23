@@ -17,6 +17,7 @@ Rails.application.routes.draw do
   resources :users
 
 	#for sensor app
+	get '/walker/sensor/gpsquests/get_questlist' => 'sensor_api#getGpsQuestsList'
 	post '/walker/sensor/steps/post_step' => 'sensor_api#postStep'
 	post '/walker/sensor/gpsquests/post_location' => 'sensor_api#postLocation'
 	post '/walker/sensor/qrcodes/post_qrcode' => 'sensor_api#postQRcode'

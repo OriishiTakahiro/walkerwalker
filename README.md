@@ -14,6 +14,7 @@
 ###Apiのルーティング  
 
 ####センサアプリ向け  
+センサアプリ -> サーバ  
 - 歩数投稿  
  - URL : /walker/sensor/steps/post_step  
  - param : userhash, step  
@@ -28,6 +29,7 @@
  - response : ```{result}```
 
 ####ゲームアプリ向け  
+サーバ -> ゲーム  
 - アイテムデータ取得  
  - URL : /walker/game/items/get_items_entity  
  - param : userhash  
@@ -36,6 +38,7 @@
  - URL : /walker/game/steps/get_step  
  - param : userhash  
  - response : ```{result,step,total_step}```
+ ゲーム -> サーバ  
 - CP保存
 	- URL : /walker/game/steps/post_step
 	- param : userhash,step
