@@ -1,14 +1,17 @@
 class SensorApiController < ApplicationController
 
-	def getGpsQuest
-		if @response[0]
-			if(Gpsquest.count <= 10)
+	def getGpsQuestList
+		if User.find_by(:userhash => params[:userhash])
+			if Gpsquest.count <= 10
+				response = {:result => :succeed}
 				Gpsquest.all.each{ |quest|
-					@response[quest.name] = "(#{quest.latitude}:#{quest.longitude})"
+					response[quest.destination] = quest.description
 				}
 			end
+		else
+			response = {:result => :failed}
 		end
-		render :json => @response
+		render :json => response
 	end
 
 	def postStep
@@ -70,14 +73,6 @@ class SensorApiController < ApplicationController
 		else
 			response = {:result => :failed}
 		end
-		render :json => response
-	end
-
-	def getGpsQuestsList
-		response = Array.new
-		Gpsquest.all.each { |quest|
-			response.push(quest.destination)
-		}
 		render :json => response
 	end
 
