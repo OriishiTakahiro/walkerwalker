@@ -8,8 +8,6 @@
 - walker_server -> サーバーアプリ  
 
 -----  
-テスト用userhash : brj31inwqezl4ukg87vxd2h5o  
------
 
 ###Apiのルーティング  
 
@@ -27,6 +25,10 @@
  - URL : /walker/sensor/qrcodes/post_qrcode  
  - param : userhash, code  
  - response : ```{result}```
+- GPSクエスト一覧の取得
+ - URL : /walker/sensor/gpsquests/get_questlist
+ - param : userhash
+ - response : ```{name:"(latitude:longitude)"}```
 
 ####ゲームアプリ向け  
 サーバ -> ゲーム  
@@ -47,3 +49,7 @@
  - URL : /walker/game/items/post_items  
  - param : ```[{id:amount},{id:amount}...]```
  - response : result
+
+ ----  
+
+####テスト用userhash : brj31inwqezl4ukg87vxd2h5o  

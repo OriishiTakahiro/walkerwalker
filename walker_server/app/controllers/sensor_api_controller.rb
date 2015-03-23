@@ -1,5 +1,16 @@
 class SensorApiController < ApplicationController
 
+	def getGpsQuest
+		if @response[0]
+			if(Gpsquest.count <= 10)
+				Gpsquest.all.each{ |quest|
+					@response[quest.name] = "(#{quest.latitude}:#{quest.longitude})"
+				}
+			end
+		end
+		render :json => @response
+	end
+
 	def postStep
 		Steplog.new(:userhash => params[:userhash],:step => params[:step]).save
 		mystep = Step.find(StepUser.find_by(:user_id => User.find_by(:userhash => params[:userhash]).id).step_id)
@@ -7,7 +18,7 @@ class SensorApiController < ApplicationController
 		if mystep
 			addition = params[:step].to_i
 			mystep.update(:stock_step => mystep.stock_step + addition ,:total_step => mystep.total_step + addition)
-			response = {:result => :successed,:total_step => mystep.total_step.to_s,:stock_step => mystep.stock_step.to_s}
+			response = {:result => :succeed,:total_step => mystep.total_step.to_s,:stock_step => mystep.stock_step.to_s}
 		else
 			response = {:result => :failed}
 		end
@@ -38,7 +49,7 @@ class SensorApiController < ApplicationController
 				end
 				item.save
 			}	
-			response = {:result => :successed}
+			response = {:result => :succeed}
 		else
 			response = {:result => :failed}
 		end
@@ -55,7 +66,7 @@ class SensorApiController < ApplicationController
 		elsif(hasitem = ItemsUsers.find_or_create_by(:item_id => event.reward, :user_id => user.id) {|iu| iu.amount = 0})
 			hasitem.amount+=1
 			hasitem.save
-			response = {:result => :successed}
+			response = {:result => :succeed}
 		else
 			response = {:result => :failed}
 		end
