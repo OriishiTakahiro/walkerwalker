@@ -27,7 +27,7 @@
  - response : ```{result}```
 - GPSクエスト一覧の取得
  - URL : /walker/sensor/gpsquests/get_questlist
- - param : userhash
+ - param : userhash, latitude, longitude
  - response : ```{destination:"(latitude:longitude)"}```
 
 ####ゲームアプリ向け  
