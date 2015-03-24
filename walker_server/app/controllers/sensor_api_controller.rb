@@ -3,17 +3,11 @@ class SensorApiController < ApplicationController
 	def getGpsQuestList
 		if User.find_by(:userhash => params[:userhash])
 			response = {:result => :succeed}
-			if Gpsquest.count <= 5
-				Gpsquest.all.each{ |quest|
-					response[quest.destination] = quest.description
-				}
-			else
-				lat = params[:latitude]
-				lon = params[:longitude]
-				Gpsquest.order("square(latitude-#{lat})+square(longitude-#{lon})" => 'asc').limit(5).each_with_index { |quest,index|
-					response[quest.destination] = quest.description
-				}
-			end
+			lat = params[:latitude]
+			lon = params[:longitude]
+			Gpsquest.order("square(latitude-#{lat})+square(longitude-#{lon})" => 'asc').limit(5).each_with_index { |quest,index|
+				response[quest.destination] = quest.description
+			}
 		else
 			response = {:result => :failed}
 		end
