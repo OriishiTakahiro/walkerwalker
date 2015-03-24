@@ -5,7 +5,7 @@ class SensorApiController < ApplicationController
 			response = {:result => :succeed}
 			lat = params[:latitude]
 			lon = params[:longitude]
-			Gpsquest.order("square(latitude-#{lat})+square(longitude-#{lon})" => 'asc').limit(5).each_with_index { |quest,index|
+			Gpsquest.order("((latitude-#{lat})*(latitude-#{lat})+(longitude-#{lon})*(longitude-#{lon})) asc").limit(5).each_with_index { |quest,index|
 				response[quest.destination] = quest.description
 			}
 		else

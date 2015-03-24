@@ -28597,3 +28597,84 @@ Processing by GameApiController#getStep as HTML
   [1m[36mStepUser Load (0.3ms)[0m  [1mSELECT  "step_users".* FROM "step_users"  WHERE "step_users"."user_id" = 1 LIMIT 1[0m
   [1m[35mStep Load (0.2ms)[0m  SELECT  "steps".* FROM "steps"  WHERE "steps"."id" = ? LIMIT 1  [["id", 1]]
 Completed 200 OK in 9ms (Views: 0.4ms | ActiveRecord: 1.1ms)
+
+
+Started GET "/walker/sensor/gpsquests/get_questlist?userhash=brj31inwqezl4ukg87vxd2h5o&latitude=0&longitude=0" for 10.211.55.2 at 2015-03-25 00:58:21 +0900
+  [1m[36mActiveRecord::SchemaMigration Load (0.1ms)[0m  [1mSELECT "schema_migrations".* FROM "schema_migrations"[0m
+Processing by SensorApiController#getGpsQuestList as HTML
+  Parameters: {"userhash"=>"brj31inwqezl4ukg87vxd2h5o", "latitude"=>"0", "longitude"=>"0"}
+  [1m[35mUser Load (0.1ms)[0m  SELECT  "users".* FROM "users"  WHERE "users"."userhash" = 'brj31inwqezl4ukg87vxd2h5o' LIMIT 1
+  [1m[36mGpsquest Load (0.3ms)[0m  [1mSELECT  "gpsquests".* FROM "gpsquests"   ORDER BY square(latitude-0)+square(longitude-0) asc LIMIT 5[0m
+SQLite3::SQLException: no such function: square: SELECT  "gpsquests".* FROM "gpsquests"   ORDER BY square(latitude-0)+square(longitude-0) asc LIMIT 5
+Completed 500 Internal Server Error in 31ms
+
+ActiveRecord::StatementInvalid (SQLite3::SQLException: no such function: square: SELECT  "gpsquests".* FROM "gpsquests"   ORDER BY square(latitude-0)+square(longitude-0) asc LIMIT 5):
+  app/controllers/sensor_api_controller.rb:8:in `getGpsQuestList'
+
+
+  Rendered /home/takahiro/.rvm/gems/ruby-2.1.4@walker/gems/actionpack-4.1.8/lib/action_dispatch/middleware/templates/rescues/_source.erb (0.7ms)
+  Rendered /home/takahiro/.rvm/gems/ruby-2.1.4@walker/gems/actionpack-4.1.8/lib/action_dispatch/middleware/templates/rescues/_trace.html.erb (1.3ms)
+  Rendered /home/takahiro/.rvm/gems/ruby-2.1.4@walker/gems/actionpack-4.1.8/lib/action_dispatch/middleware/templates/rescues/_request_and_response.html.erb (1.1ms)
+  Rendered /home/takahiro/.rvm/gems/ruby-2.1.4@walker/gems/actionpack-4.1.8/lib/action_dispatch/middleware/templates/rescues/diagnostics.erb within rescues/layout (17.3ms)
+
+
+Started GET "/walker/sensor/gpsquests/get_questlist?userhash=brj31inwqezl4ukg87vxd2h5o&latitude=0&longitude=0" for 10.211.55.2 at 2015-03-25 00:59:50 +0900
+Processing by SensorApiController#getGpsQuestList as HTML
+  Parameters: {"userhash"=>"brj31inwqezl4ukg87vxd2h5o", "latitude"=>"0", "longitude"=>"0"}
+  [1m[35mUser Load (0.1ms)[0m  SELECT  "users".* FROM "users"  WHERE "users"."userhash" = 'brj31inwqezl4ukg87vxd2h5o' LIMIT 1
+  [1m[36mGpsquest Load (0.2ms)[0m  [1mSELECT  "gpsquests".* FROM "gpsquests"   ORDER BY pow(latitude-0,2)+pow(longitude-0,2) asc LIMIT 5[0m
+SQLite3::SQLException: no such function: pow: SELECT  "gpsquests".* FROM "gpsquests"   ORDER BY pow(latitude-0,2)+pow(longitude-0,2) asc LIMIT 5
+Completed 500 Internal Server Error in 8ms
+
+ActiveRecord::StatementInvalid (SQLite3::SQLException: no such function: pow: SELECT  "gpsquests".* FROM "gpsquests"   ORDER BY pow(latitude-0,2)+pow(longitude-0,2) asc LIMIT 5):
+  app/controllers/sensor_api_controller.rb:8:in `getGpsQuestList'
+
+
+  Rendered /home/takahiro/.rvm/gems/ruby-2.1.4@walker/gems/actionpack-4.1.8/lib/action_dispatch/middleware/templates/rescues/_source.erb (0.5ms)
+  Rendered /home/takahiro/.rvm/gems/ruby-2.1.4@walker/gems/actionpack-4.1.8/lib/action_dispatch/middleware/templates/rescues/_trace.html.erb (3.3ms)
+  Rendered /home/takahiro/.rvm/gems/ruby-2.1.4@walker/gems/actionpack-4.1.8/lib/action_dispatch/middleware/templates/rescues/_request_and_response.html.erb (0.9ms)
+  Rendered /home/takahiro/.rvm/gems/ruby-2.1.4@walker/gems/actionpack-4.1.8/lib/action_dispatch/middleware/templates/rescues/diagnostics.erb within rescues/layout (15.4ms)
+
+
+Started GET "/walker/sensor/gpsquests/get_questlist?userhash=brj31inwqezl4ukg87vxd2h5o&latitude=0&longitude=0" for 10.211.55.2 at 2015-03-25 01:00:30 +0900
+Processing by SensorApiController#getGpsQuestList as HTML
+  Parameters: {"userhash"=>"brj31inwqezl4ukg87vxd2h5o", "latitude"=>"0", "longitude"=>"0"}
+  [1m[35mUser Load (0.1ms)[0m  SELECT  "users".* FROM "users"  WHERE "users"."userhash" = 'brj31inwqezl4ukg87vxd2h5o' LIMIT 1
+  [1m[36mGpsquest Load (0.2ms)[0m  [1mSELECT  "gpsquests".* FROM "gpsquests"   ORDER BY (pow(latitude-0,2)+POW(longitude-0,2)) asc LIMIT 5[0m
+SQLite3::SQLException: no such function: POW: SELECT  "gpsquests".* FROM "gpsquests"   ORDER BY (pow(latitude-0,2)+POW(longitude-0,2)) asc LIMIT 5
+Completed 500 Internal Server Error in 8ms
+
+ActiveRecord::StatementInvalid (SQLite3::SQLException: no such function: POW: SELECT  "gpsquests".* FROM "gpsquests"   ORDER BY (pow(latitude-0,2)+POW(longitude-0,2)) asc LIMIT 5):
+  app/controllers/sensor_api_controller.rb:8:in `getGpsQuestList'
+
+
+  Rendered /home/takahiro/.rvm/gems/ruby-2.1.4@walker/gems/actionpack-4.1.8/lib/action_dispatch/middleware/templates/rescues/_source.erb (0.5ms)
+  Rendered /home/takahiro/.rvm/gems/ruby-2.1.4@walker/gems/actionpack-4.1.8/lib/action_dispatch/middleware/templates/rescues/_trace.html.erb (1.5ms)
+  Rendered /home/takahiro/.rvm/gems/ruby-2.1.4@walker/gems/actionpack-4.1.8/lib/action_dispatch/middleware/templates/rescues/_request_and_response.html.erb (0.9ms)
+  Rendered /home/takahiro/.rvm/gems/ruby-2.1.4@walker/gems/actionpack-4.1.8/lib/action_dispatch/middleware/templates/rescues/diagnostics.erb within rescues/layout (14.2ms)
+
+
+Started GET "/walker/sensor/gpsquests/get_questlist?userhash=brj31inwqezl4ukg87vxd2h5o&latitude=0&longitude=0" for 10.211.55.2 at 2015-03-25 01:02:03 +0900
+Processing by SensorApiController#getGpsQuestList as HTML
+  Parameters: {"userhash"=>"brj31inwqezl4ukg87vxd2h5o", "latitude"=>"0", "longitude"=>"0"}
+  [1m[35mUser Load (0.1ms)[0m  SELECT  "users".* FROM "users"  WHERE "users"."userhash" = 'brj31inwqezl4ukg87vxd2h5o' LIMIT 1
+  [1m[36mGpsquest Load (0.2ms)[0m  [1mSELECT  "gpsquests".* FROM "gpsquests"   ORDER BY (latitude-0^2+longitude-0^2) asc LIMIT 5[0m
+SQLite3::SQLException: unrecognized token: "^": SELECT  "gpsquests".* FROM "gpsquests"   ORDER BY (latitude-0^2+longitude-0^2) asc LIMIT 5
+Completed 500 Internal Server Error in 12ms
+
+ActiveRecord::StatementInvalid (SQLite3::SQLException: unrecognized token: "^": SELECT  "gpsquests".* FROM "gpsquests"   ORDER BY (latitude-0^2+longitude-0^2) asc LIMIT 5):
+  app/controllers/sensor_api_controller.rb:8:in `getGpsQuestList'
+
+
+  Rendered /home/takahiro/.rvm/gems/ruby-2.1.4@walker/gems/actionpack-4.1.8/lib/action_dispatch/middleware/templates/rescues/_source.erb (0.5ms)
+  Rendered /home/takahiro/.rvm/gems/ruby-2.1.4@walker/gems/actionpack-4.1.8/lib/action_dispatch/middleware/templates/rescues/_trace.html.erb (1.0ms)
+  Rendered /home/takahiro/.rvm/gems/ruby-2.1.4@walker/gems/actionpack-4.1.8/lib/action_dispatch/middleware/templates/rescues/_request_and_response.html.erb (1.1ms)
+  Rendered /home/takahiro/.rvm/gems/ruby-2.1.4@walker/gems/actionpack-4.1.8/lib/action_dispatch/middleware/templates/rescues/diagnostics.erb within rescues/layout (12.6ms)
+
+
+Started GET "/walker/sensor/gpsquests/get_questlist?userhash=brj31inwqezl4ukg87vxd2h5o&latitude=0&longitude=0" for 10.211.55.2 at 2015-03-25 01:04:46 +0900
+Processing by SensorApiController#getGpsQuestList as HTML
+  Parameters: {"userhash"=>"brj31inwqezl4ukg87vxd2h5o", "latitude"=>"0", "longitude"=>"0"}
+  [1m[35mUser Load (0.1ms)[0m  SELECT  "users".* FROM "users"  WHERE "users"."userhash" = 'brj31inwqezl4ukg87vxd2h5o' LIMIT 1
+  [1m[36mGpsquest Load (0.2ms)[0m  [1mSELECT  "gpsquests".* FROM "gpsquests"   ORDER BY ((latitude-0)*(latitude-0)+(longitude-0)*(longitude-0)) asc LIMIT 5[0m
+Completed 200 OK in 17ms (Views: 0.5ms | ActiveRecord: 1.0ms)
